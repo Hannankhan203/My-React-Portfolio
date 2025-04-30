@@ -6,7 +6,7 @@ function About() {
     <section id="About">
       <div className="about-section">
       <h2 className="about-heading">About Me</h2>
-      <img src={profileImage} alt="Profile Image" className="profile-image" />
+      <img src={profileImage} alt="Profile-Image" className="profile-image" />
       <p className="about-p">
         Hello! I'm <strong>Abdul Hannan Khan</strong>, a passionate and
         dedicated Computer Science student at the{" "}
