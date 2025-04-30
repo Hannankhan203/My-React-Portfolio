@@ -4,7 +4,7 @@ This is my **personal portfolio website** built using **React.js**, designed to 
 
 ## 📌 Live Demo
 
-🌐 **Will be hosted on:** [Netlify](https://www.netlify.com) (Link will be added once deployed)
+🌐 **Will be hosted on:** [Netlify](https://my-react-portfolio-203.netlify.app/) (Link will be added once deployed)
 
 ---
 
