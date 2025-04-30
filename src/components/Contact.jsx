@@ -11,10 +11,10 @@ function Contact() {
           Got a project idea or just want to chat? Drop me a message!
         </p>
         <p className="mail">
-          <i className="fas fa-envelope"></i>Email: ak1818375@gmail.com
+          <i className="fas fa-envelope"></i> Email: ak1818375@gmail.com
         </p>
         <p className="phone">
-          <i className="fas fa-phone"></i>Phone: +92 330 1375469
+          <i className="fas fa-phone"></i> Phone: +92 330 1375469
         </p>
         <div className="socials">
           <i className="fab fa-github"></i>
