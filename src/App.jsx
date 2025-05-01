@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Navbar from './components/Navbar';
 import HeroSection from './components/HeroSection';
 import About from './components/About';
@@ -7,16 +7,23 @@ import Skills from './components/Skills';
 import Contact from './components/Contact';
 
 import './App.css';
+import './components/color.css';
 
 function App() {
+  const [darkMode, setDarkMode] = useState(false);
   return (
     <div>
-      <Navbar />
-      <HeroSection />
-      <About />
-      <Projects />
-      <Skills />
-      <Contact />
+      <label htmlFor="theme-checkbox">
+        <input type="checkbox" className="styled-checkbox" id="theme-checkbox" checked={darkMode} onChange={(e) => setDarkMode(e.target.checked)} />
+        <span className="check"></span>
+        <span className="botn"></span>
+      </label>
+      <Navbar darkMode={darkMode} />
+      <HeroSection darkMode={darkMode} />
+      <About darkMode={darkMode} />
+      <Projects darkMode={darkMode} />
+      <Skills darkMode={darkMode} />
+      <Contact darkMode={darkMode} />
     </div>
   )
 }
