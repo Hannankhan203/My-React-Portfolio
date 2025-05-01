@@ -545,21 +545,6 @@ label input:checked ~ .botn {
   display: none;
 }
 
-.translating-Navbar {
-  transform: translateY(-76%);
-  transition: 0.5s;
-}
-
-.translating-nav-options {
-  transform: translateY(-100%);
-  transition: 0.5s;
-}
-
-.translating-checkbox {
-  transform: translateY(-1500%);
-  transition: 0.5s;
-}
-
 /* Responsive Styling (Mobile) */
 @media screen and (max-width: 768px) {
   /* Navbar Styling */
@@ -781,4 +766,20 @@ label input:checked ~ .botn {
     height: 10vh;
     text-align: center;
   }
+
+  
+.translating-Navbar {
+  transform: translateY(-76%);
+  transition: 0.5s;
+}
+
+.translating-nav-options {
+  transform: translateY(-100%);
+  transition: 0.5s;
+}
+
+.translating-checkbox {
+  transform: translateY(-1500%);
+  transition: 0.5s;
+}
 }
