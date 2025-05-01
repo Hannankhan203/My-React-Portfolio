@@ -4,7 +4,7 @@ This is my **personal portfolio website** built using **React.js**, designed to 
 
 ## 📌 Live Demo
 
-🌐 **Will be hosted on:** [Netlify](https://my-react-portfolio-203.netlify.app/) (Link will be added once deployed)
+🌐 **Will be hosted on:** [Netlify](https://my-react-portfolio-203.netlify.app/)
 
 ---
 
@@ -21,10 +21,10 @@ This is my **personal portfolio website** built using **React.js**, designed to 
 - 🎨 Styled using **CSS** (custom styles for layout, colors, etc.).
 - 📱 Fully **responsive design** planned for mobile and tablet devices.
 - 🌙 Planned **Dark Mode / Light Mode Toggle** using a **custom checkbox switch**.
-- 🔗 Social media links (will be added soon).
-- 🧭 Smooth navigation across all sections (to be implemented).
+- 🔗 Social media links.
+- 🧭 Smooth navigation across all sections.
 - 🛠️ Modular and reusable component structure.
-- 🌐 Hosted on **Netlify** (deployment coming soon).
+- 🌐 Hosted on **Netlify**.
 - 📂 Code versioned using **Git** and hosted on **GitHub**.
 
 ---
@@ -38,7 +38,7 @@ This is my **personal portfolio website** built using **React.js**, designed to 
 | CSS            | Styling and layout                 |
 | HTML5          | Markup structure (via JSX)         |
 | JavaScript     | Logic and interactivity            |
-| Netlify        | (Upcoming) Hosting & deployment    |
+| Netlify        | Hosting & deployment               |
 | Git & GitHub   | Version control and code hosting   |
 
 ---
@@ -47,8 +47,6 @@ This is my **personal portfolio website** built using **React.js**, designed to 
 
 - [ ] Dark Mode / Light Mode with custom toggle
 - [ ] Responsive design across all devices
-- [ ] Smooth scroll navigation for all buttons
-- [ ] Live links to social media profiles
 - [ ] Final content for project descriptions and about section
 
 ---
