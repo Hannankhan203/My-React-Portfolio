@@ -15,8 +15,8 @@ function App() {
     <div>
       <label htmlFor="theme-checkbox">
         <input type="checkbox" className="styled-checkbox" id="theme-checkbox" checked={darkMode} onChange={(e) => setDarkMode(e.target.checked)} />
-        <span className="check"></span>
-        <span className="botn"></span>
+        <span className={`check ${darkMode ? "dark-mode" : "light-mode"}`}></span>
+        <span className={`botn ${darkMode ? "dark-mode" : "light-mode"}`}></span>
       </label>
       <Navbar darkMode={darkMode} />
       <HeroSection darkMode={darkMode} />
