@@ -469,7 +469,6 @@ label input:checked ~ .botn {
   /* padding: 10px; */
   border-radius: 20px;
   box-shadow: 0 0 10px #000, inset 0 0 10px #000;
-  background-color: #797777;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -486,7 +485,6 @@ label input:checked ~ .botn {
   width: 200%;
   height: 200%;
   position: absolute;
-  background-color: #000;
   animation: spin 6s infinite linear;
   opacity: 0.3;
 }
@@ -503,13 +501,14 @@ label input:checked ~ .botn {
   z-index: 10;
 }
 
-.mail a, .phone a {
+.mail a,
+.phone a {
   /* border: 2px solid black; */
-  color: #112d4e;
   text-decoration: none;
 }
 
-.mail a:hover, .phone a:hover {
+.mail a:hover,
+.phone a:hover {
   text-decoration: underline;
 }
 
@@ -525,18 +524,12 @@ label input:checked ~ .botn {
 
 .socials a {
   /* border: 2px solid black; */
-  color: #112d4e;
   text-decoration: none;
   transition: 0.3s;
 }
 
-.socials a:hover {
-  color: #f9a826;
-}
-
 .copyright {
   font-size: 1.2rem;
-  background-color: black;
   width: 100%;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
@@ -544,4 +537,5 @@ label input:checked ~ .botn {
   display: flex;
   justify-content: center;
   align-items: center;
+  box-shadow: 0 0 10px #000, inset 0 0 10px #000;
 }
