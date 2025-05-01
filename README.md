@@ -54,13 +54,6 @@ This is my **personal portfolio website** built using **React.js**, designed to 
 
 ---
 
-## 📷 Preview
-
-[▶ Watch demo video](./src/assets/My%20React%20Portfolio%20Light%20Mode.mp4)
-[▶ Watch demo video](./src/assets/My%20React%20Portfolio%20Dark%20Mode.mp4)
-
----
-
 ## 📌 Version
 
 **Current Version:** `v1.0.0` – Initial full release with all planned features completed.
