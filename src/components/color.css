@@ -142,12 +142,12 @@ label .botn.dark-mode::after {
 }
 
 .hero-heading.light-mode {
-    color: #112d4e;
-    transition: 0.5s;
+  color: #112d4e;
+  transition: 0.5s;
 }
 
 .hero-heading.dark-mode {
-    transition: 0.5s;
+  transition: 0.5s;
   color: #f5f5f5;
 }
 
@@ -162,12 +162,12 @@ label .botn.dark-mode::after {
 }
 
 .hero-p.light-mode {
-    color: #112d4e;
-    transition: 0.5s;
+  color: #112d4e;
+  transition: 0.5s;
 }
 
 .hero-p.dark-mode {
-    transition: 0.5s;
+  transition: 0.5s;
   color: #f5f5f5;
 }
 
@@ -219,59 +219,59 @@ label .botn.dark-mode::after {
 
 .about-section.light-mode::before {
   background-color: #c9c9d6;
- transition: 0.3s;
+  transition: 0.3s;
 }
 
 .about-section.dark-mode::before {
   background-color: #8b8b90;
- transition: 0.3s;
+  transition: 0.3s;
 }
 
 .about-heading.light-mode {
-    color: #112d4e;
-    transition: 0.3s;
+  color: #112d4e;
+  transition: 0.3s;
 }
 
 .about-heading.dark-mode {
-    color: #f4f4f9;
-    transition: 0.3s;
+  color: #f4f4f9;
+  transition: 0.3s;
 }
 
 .about-p.light-mode {
-    color: #112d4e;
-    transition: 0.3s;
+  color: #112d4e;
+  transition: 0.3s;
 }
 
 .about-p.dark-mode {
-    color: #f4f4f9;
-    transition: 0.3s;
+  color: #f4f4f9;
+  transition: 0.3s;
 }
 
 .about-sub-heading.light-mode {
-    color: #112d4e;
-    transition: 0.3s;
+  color: #112d4e;
+  transition: 0.3s;
 }
 
 .about-sub-heading.dark-mode {
-    color: #f4f4f9;
-    transition: 0.3s;
+  color: #f4f4f9;
+  transition: 0.3s;
 }
 
 .about-focus.light-mode {
-    color: #112d4e;
-    transition: 0.3s;
+  color: #112d4e;
+  transition: 0.3s;
 }
 
 .about-focus.dark-mode {
-    color: #f4f4f9;
-    transition: 0.3s;
+  color: #f4f4f9;
+  transition: 0.3s;
 }
 
 /* Project Section */
 
 .projects-section.light-mode {
   background-color: rgba(63, 114, 175);
-  color: #112d4e; 
+  color: #112d4e;
   transition: 0.5s;
 }
 
@@ -287,8 +287,9 @@ label .botn.dark-mode::after {
 }
 
 .projects-section.dark-mode::before {
-    background-color: rgba(83, 90, 125, 0.7);
-    transition: 0.5s;}
+  background-color: rgba(83, 90, 125, 0.7);
+  transition: 0.5s;
+}
 
 .project.light-mode {
   background-color: rgba(0, 188, 251, 0.2);
@@ -332,6 +333,29 @@ label .botn.dark-mode::after {
 .view-btn a.dark-mode {
   transition: 0.5s;
   color: #f5f5f5;
+}
+
+/* Skills Section */
+.skills-section.light-mode {
+  background-color: rgba(63, 114, 175);
+  color: #112d4e;
+  transition: 0.5s;
+}
+
+.skills-section.dark-mode {
+  background-color: rgba(37, 40, 54);
+  color: #f4f4f4;
+  transition: 0.5s;
+}
+
+.skills-section.light-mode::before {
+  background-color: rgba(50, 86, 131, 0.7);
+  transition: 0.5s;
+}
+
+.skills-section.dark-mode::before {
+  background-color: rgba(83, 90, 125, 0.7);
+  transition: 0.5s;
 }
 
 /* Contact Section */

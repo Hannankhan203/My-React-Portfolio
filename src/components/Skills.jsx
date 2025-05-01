@@ -1,6 +1,6 @@
 import React from "react";
 
-function Skills() {
+function Skills({ darkMode }) {
   const skillsList = [
     "HTML5",
     "CSS3",
@@ -12,7 +12,7 @@ function Skills() {
 
   return (
     <section id="Skills">
-      <div className="skills-section">
+      <div className={`skills-section ${darkMode ? "dark-mode" : "light-mode"}`}>
         <h2 className="skills-heading">My Skills</h2>
         {skillsList.map((skill, index) => (
             <ul className="skill-list">
