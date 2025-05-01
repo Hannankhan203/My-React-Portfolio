@@ -12,31 +12,36 @@ function Projects() {
             title: "Weather App",
             src: WeatherAppImg,
             alt: "Weather App",
-            tech: "HTML, CSS, JavaScript, OpenWeather API"
+            tech: "HTML, CSS, JavaScript, OpenWeather API",
+            href: "https://hannankhan203.github.io/Weather-App/",
         },
         {
             title: "Scientific Calculator",
             src: ScientificCalculator,
             alt: "Scientific Calculator",
-            tech: "HTML, CSS, JavaScript"
+            tech: "HTML, CSS, JavaScript",
+            href: "https://hannankhan203.github.io/Scientific-Calculator/",
         },
         {
             title: "Notes App",
             src: Notes,
             alt: "Notes App",
-            tech: "HTML, CSS, JavaScript"
+            tech: "HTML, CSS, JavaScript",
+            href: "https://hannankhan203.github.io/Notes/",
         },
         {
             title: "Currency Converter",
             src: CurrencyConverter,
             alt: "Currency Converter",
-            tech: "HTML, CSS, JavaScript, Open Exchange API"
+            tech: "HTML, CSS, JavaScript, Open Exchange API",
+            href: "https://hannankhan203.github.io/Currency-Converter/",
         },
         {
             title: "Coursing Site",
             src: CoursingSite,
             alt: "Coursing Site",
-            tech: "HTML, CSS, JavaScript"
+            tech: "HTML, CSS, JavaScript",
+            href: "https://hannankhan203.github.io/Coursing-Site/",
         },
     ]
 
@@ -50,7 +55,7 @@ function Projects() {
                             <h4 className="pro-head">{project.title}</h4>
                             <img className='pro-img' src={project.src} alt={project.alt} />
                             <p className="pro-tech">{project.tech}</p>
-                            <button className="view-btn">View</button>
+                            <button className="view-btn"><a href={project.href}>View</a></button>
                         </div>
                     ))}
                 </div>
