@@ -261,7 +261,6 @@ label input:checked ~ .botn {
   padding: 10px;
   border-radius: 20px;
   height: 100%;
-  background-color: #f4f4f9;
   box-shadow: 0 0 10px #000, inset 0 0 10px #000;
   display: flex;
   flex-direction: column;

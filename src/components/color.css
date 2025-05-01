@@ -119,7 +119,7 @@ label .botn.dark-mode::after {
   transition: 0.5s;
 }
 
-/* Home Section */
+/* Hero Section */
 
 #Hero-Section.light-mode {
   background-color: #00bcfb;
@@ -207,14 +207,64 @@ label .botn.dark-mode::after {
 
 /* About Section */
 
-.about .about-background.light-mode {
+.about-section.light-mode {
   background-color: #f4f4f9;
   transition: 0.5s;
 }
 
-.about .about-background.dark-mode {
+.about-section.dark-mode {
   background-color: #252836;
   transition: 0.5s;
+}
+
+.about-section.light-mode::before {
+  background-color: #c9c9d6;
+ transition: 0.3s;
+}
+
+.about-section.dark-mode::before {
+  background-color: #8b8b90;
+ transition: 0.3s;
+}
+
+.about-heading.light-mode {
+    color: #112d4e;
+    transition: 0.3s;
+}
+
+.about-heading.dark-mode {
+    color: #f4f4f9;
+    transition: 0.3s;
+}
+
+.about-p.light-mode {
+    color: #112d4e;
+    transition: 0.3s;
+}
+
+.about-p.dark-mode {
+    color: #f4f4f9;
+    transition: 0.3s;
+}
+
+.about-sub-heading.light-mode {
+    color: #112d4e;
+    transition: 0.3s;
+}
+
+.about-sub-heading.dark-mode {
+    color: #f4f4f9;
+    transition: 0.3s;
+}
+
+.about-focus.light-mode {
+    color: #112d4e;
+    transition: 0.3s;
+}
+
+.about-focus.dark-mode {
+    color: #f4f4f9;
+    transition: 0.3s;
 }
 
 /* Project Section */
