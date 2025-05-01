@@ -673,7 +673,7 @@ label input:checked ~ .botn {
 
   /* About Section Styling */
   #About {
-    height: 145vh;
+    height: 900px;
   }
 
   .about-section {
@@ -702,7 +702,7 @@ label input:checked ~ .botn {
   }
 
   #Projects {
-    height: 215vh;
+    height: 1300px;
   }
 
   .projects-heading {
@@ -732,7 +732,7 @@ label input:checked ~ .botn {
 
   /* Skills Styling*/
   #Skills {
-    height: 39vh;
+    height: 250px;
   }
 
   .skills-heading {
@@ -745,7 +745,7 @@ label input:checked ~ .botn {
 
   /* Contact Section (Footer) Styling */
   #Contact {
-    height: 45vh;
+    height: 250px;
   }
 
   .upper-section {
