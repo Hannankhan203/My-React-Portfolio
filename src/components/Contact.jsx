@@ -19,13 +19,13 @@ function Contact() {
             <a href="tel:+923301375469">+92 330 1375469</a>
           </p>
           <div className="socials">
-            <a href="https://github.com/Hannankhan203" target='_blank'>
+            <a href="https://github.com/Hannankhan203" target='_blank' rel="noreferrer">
               <i className="fab fa-github"></i>
             </a>
-            <a href="https://x.com/Hannankhan203" target='_blank'>
+            <a href="https://x.com/Hannankhan203" target='_blank' rel="noreferrer">
               <i className="fab fa-twitter"></i>
             </a>
-            <a href="https://www.instagram.com/hannannnkhann/" target='_blank'>
+            <a href="https://www.instagram.com/hannannnkhann/" target='_blank' rel="noreferrer">
               <i className="fab fa-instagram"></i>
             </a>
           </div>
