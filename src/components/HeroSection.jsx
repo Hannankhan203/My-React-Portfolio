@@ -1,7 +1,6 @@
-import React, { useState,  useEffect } from "react";
+import React from "react";
 
 function HeroSection({ darkMode }) {
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 576);
 
   return (
     <section
