@@ -31,13 +31,13 @@ html {
 
 /* Navbar */
 
-.menu-icon.light-mode {
+.menu.light-mode {
   color: #f4f4f9;
   background-color: #3f72af;
   transition: 0.5s;
 }
 
-.menu-icon.dark-mode {
+.menu.dark-mode {
   color: #f5f5f5;
   background-color: #252836;
   transition: 0.5s;
