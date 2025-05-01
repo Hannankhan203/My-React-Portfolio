@@ -12,7 +12,7 @@ import './components/color.css';
 function App() {
   const [darkMode, setDarkMode] = useState(false);
   return (
-    <div>
+    <body className={darkMode ? "dark-mode" : "light-mode"}>
       <label htmlFor="theme-checkbox">
         <input type="checkbox" className="styled-checkbox" id="theme-checkbox" checked={darkMode} onChange={(e) => setDarkMode(e.target.checked)} />
         <span className={`check ${darkMode ? "dark-mode" : "light-mode"}`}></span>
@@ -24,7 +24,7 @@ function App() {
       <Projects darkMode={darkMode} />
       <Skills darkMode={darkMode} />
       <Contact darkMode={darkMode} />
-    </div>
+    </body>
   )
 }
 
