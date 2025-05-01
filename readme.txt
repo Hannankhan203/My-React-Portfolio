@@ -11,6 +11,9 @@
 - Social media links
 - Navigation scroll behavior
 
+## [0.0.7] - 2925-05-01
+###Added
+- Dark/light mode toggle
+
 ### Planned
 - Responsive design
-- Dark/light mode toggle

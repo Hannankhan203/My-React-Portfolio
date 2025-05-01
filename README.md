@@ -20,7 +20,7 @@ This is my **personal portfolio website** built using **React.js**, designed to 
   - `Contact.js`
 - 🎨 Styled using **CSS** (custom styles for layout, colors, etc.).
 - 📱 Fully **responsive design** planned for mobile and tablet devices.
-- 🌙 Planned **Dark Mode / Light Mode Toggle** using a **custom checkbox switch**.
+- 🌙 **Dark Mode / Light Mode Toggle** using a **custom checkbox switch**.
 - 🔗 Social media links.
 - 🧭 Smooth navigation across all sections.
 - 🛠️ Modular and reusable component structure.
@@ -45,7 +45,6 @@ This is my **personal portfolio website** built using **React.js**, designed to 
 
 ## 🔧 To Be Added
 
-- [ ] Dark Mode / Light Mode with custom toggle
 - [ ] Responsive design across all devices
 - [ ] Final content for project descriptions and about section
 
