@@ -702,7 +702,7 @@ label input:checked ~ .botn {
   }
 
   #Projects {
-    height: 1300px;
+    height: 1350px;
   }
 
   .projects-heading {
@@ -745,7 +745,7 @@ label input:checked ~ .botn {
 
   /* Contact Section (Footer) Styling */
   #Contact {
-    height: 250px;
+    height: 280px;
   }
 
   .upper-section {
