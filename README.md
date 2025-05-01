@@ -19,7 +19,7 @@ This is my **personal portfolio website** built using **React.js**, designed to 
   - `Skills.js`
   - `Contact.js`
 - 🎨 Styled using **CSS** (custom styles for layout, colors, etc.).
-- 📱 Fully **responsive design** planned for mobile and tablet devices.
+- 📱 Fully **responsive design** for mobile devices.
 - 🌙 **Dark Mode / Light Mode Toggle** using a **custom checkbox switch**.
 - 🔗 Social media links.
 - 🧭 Smooth navigation across all sections.
@@ -45,7 +45,6 @@ This is my **personal portfolio website** built using **React.js**, designed to 
 
 ## 🔧 To Be Added
 
-- [ ] Responsive design across all devices
 - [ ] Final content for project descriptions and about section
 
 ---

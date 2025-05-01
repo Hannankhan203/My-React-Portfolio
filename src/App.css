@@ -462,6 +462,7 @@ label input:checked ~ .botn {
   justify-content: center;
   align-items: center;
   gap: 1rem;
+  padding: 10px;
 }
 
 .contact-section {
@@ -675,5 +676,112 @@ label input:checked ~ .botn {
 
   label input:checked ~ .botn {
     left: 15px;
+  }
+
+  /* About Section Styling */
+  #About {
+    height: 120vh;
+  }
+
+  .about-section {
+    gap: 1rem;
+  }
+
+  .about-heading {
+    font-size: 1.5rem;
+  }
+
+  .profile-image {
+    width: 100px;
+  }
+
+  .about-p {
+    font-size: 0.7rem;
+  }
+
+  .about-sub-heading {
+    font-size: 1.1rem;
+  }
+
+  .about-focus {
+    font-size: 0.7rem;
+  }
+
+  #Projects {
+    /* border: 2px solid black; */
+    padding: 20px;
+    height: 225vh;
+  }
+
+  .projects-heading {
+    font-size: 1.5rem;
+  }
+
+  .projects {
+    gap: 2rem;
+  }
+
+  .pro-head,
+  .pro-tech {
+    font-size: 0.7rem;
+  }
+
+  .pro-img {
+    width: 150px;
+  }
+
+  .view-btn {
+    font-size: 0.7rem;
+  }
+
+  .view-btn a {
+    padding: 8px;
+  }
+
+  /* Skills Styling*/
+  #Skills {
+    padding: 20px;
+    height: 45vh;
+  }
+
+  .skills-heading {
+    font-size: 1.5rem;
+  }
+
+  .skill-list {
+    font-size: 0.7rem;
+  }
+
+  /* Contact Section (Footer) Styling */
+  #Contact {
+    height: 45vh;
+  }
+
+  .upper-section {
+    gap: 1rem;
+  }
+
+  .contact-section {
+    gap: 1rem;
+  }
+
+  .contact-heading {
+    font-size: 1.5rem;
+  }
+
+  .contact-p,
+  .mail,
+  .phone {
+    font-size: 0.7rem;
+  }
+
+  .socials {
+    font-size: 1.5rem;
+    gap: 2rem;
+  }
+
+  .copyright {
+    font-size: 0.7rem;
+    height: 8vh;
   }
 }

@@ -15,5 +15,6 @@
 ###Added
 - Dark/light mode toggle
 
-### Planned
+## [0.0.8] - 2925-05-01
+###Added
 - Responsive design
