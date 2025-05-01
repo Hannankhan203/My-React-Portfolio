@@ -22,3 +22,7 @@
 ## [0.0.9] - 2025-05-01
 ###Added
 - Responsive design
+
+## [1.0.0] - 2025-05-01
+###Fixed
+- Responsive Navbar

@@ -28,12 +28,12 @@ function Navbar({ darkMode, setCheckboxTranslate }) {
       <nav
         id="Navbar"
         className={`${darkMode ? "dark-mode" : "light-mode"} ${
-          isMobile && navTranslate ? "translating-Navbar" : ""
+          isMobile && navTranslate ? "" : "translating-Navbar"
         }`}
       >
         <i
           className={`fas fa-bars menu ${isMobile ? "" : "hide"} ${
-            menuPosition ? "menu-position" : ""
+            menuPosition ? "" : "menu-position"
           } ${darkMode ? "dark-mode" : "light-mode"}`}
           onClick={() => {
             toggleNavbar();
@@ -41,7 +41,7 @@ function Navbar({ darkMode, setCheckboxTranslate }) {
         ></i>
         <ul
           className={`nav-options ${
-            isMobile && navOptionsTranslate ? "translating-nav-options" : ""
+            isMobile && navOptionsTranslate ? "" : "translating-nav-options"
           }`}
         >
           <li className="nav-list">

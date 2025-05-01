@@ -18,7 +18,7 @@ function App() {
       <div className="App">
       <label
         htmlFor="theme-checkbox"
-        className={`${checkboxTranslate ? "translating-checkbox" : ""}`}
+        className={`${checkboxTranslate ? "" : "translating-checkbox"}`}
       >
         <input
           type="checkbox"
