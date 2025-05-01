@@ -413,6 +413,17 @@ body {
 .mail,
 .phone {
   font-size: 1.2rem;
+  z-index: 10;
+}
+
+.mail a, .phone a {
+  /* border: 2px solid black; */
+  color: #112d4e;
+  text-decoration: none;
+}
+
+.mail a:hover, .phone a:hover {
+  text-decoration: underline;
 }
 
 .socials {
@@ -422,6 +433,18 @@ body {
   align-items: center;
   font-size: 3rem;
   gap: 5rem;
+  z-index: 10;
+}
+
+.socials a {
+  /* border: 2px solid black; */
+  color: #112d4e;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.socials a:hover {
+  color: #f9a826;
 }
 
 .copyright {
