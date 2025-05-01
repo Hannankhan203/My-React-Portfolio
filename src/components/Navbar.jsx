@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 function Navbar({ darkMode }) {
   // const [darkMode, setDarkMode] = useState(false);
