@@ -546,7 +546,7 @@ label input:checked ~ .botn {
 }
 
 .translating-Navbar {
-  transform: translateY(-81%);
+  transform: translateY(-76%);
   transition: 0.5s;
 }
 
@@ -560,28 +560,23 @@ label input:checked ~ .botn {
   transition: 0.5s;
 }
 
-.translating-Hero-Section {
-  transition: margin-top 0.5s ease;
-  margin-top: 45vh;
-}
-
 /* Responsive Styling (Mobile) */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
   /* Navbar Styling */
   #Navbar {
-    height: 37vh;
+    height: 30vh;
   }
 
   .nav-options {
     flex-direction: column;
-    gap: 2rem;
-    font-size: 1rem;
+    gap: 1.5rem;
+    font-size: 0.7rem;
   }
   .menu {
     position: fixed;
     /* border: 2px solid black; */
-    top: 10px;
-    left: 10px;
+    top: 15px;
+    left: 15px;
     font-size: 1.5rem;
     cursor: pointer;
     transition: 0.3s;
@@ -593,7 +588,7 @@ label input:checked ~ .botn {
 
   .menu-position {
     position: fixed;
-    top: 85%;
+    top: 82%;
     left: 10px;
   }
 
@@ -613,29 +608,27 @@ label input:checked ~ .botn {
   }
 
   .hero-heading {
-    font-size: 2rem;
+    font-size: 1.5rem;
     text-align: center;
-    text-shadow: 0 0 10px #000;
-    z-index: 1;
   }
 
   .hero-p {
-    font-size: 1rem;
+    font-size: 0.7rem;
     text-align: center;
   }
 
   .explore-btn {
-    font-size: 1rem;
+    font-size: 0.7rem;
   }
 
   .explore-btn a {
-    padding: 15px;
+    padding: 10px;
   }
 
   /* Custom Checkbox Styling */
   label {
     /* border: 2px solid black; */
-    top: 15%;
+    top: 10%;
     left: 10%;
     width: 30px;
     height: 15px;
@@ -688,7 +681,7 @@ label input:checked ~ .botn {
   }
 
   .about-heading {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 
   .profile-image {
@@ -696,23 +689,23 @@ label input:checked ~ .botn {
   }
 
   .about-p {
-    font-size: 1rem;
+    font-size: 0.7rem;
   }
 
   .about-sub-heading {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
   }
 
   .about-focus {
-    font-size: 1rem;
+    font-size: 0.7rem;
   }
 
   #Projects {
-    height: 170vh;
+    height: 215vh;
   }
 
   .projects-heading {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 
   .projects {
@@ -721,37 +714,37 @@ label input:checked ~ .botn {
 
   .pro-head,
   .pro-tech {
-    font-size: 1rem;
+    font-size: 0.7rem;
   }
 
   .pro-img {
-    width: 200px;
+    width: 150px;
   }
 
   .view-btn {
-    font-size: 1rem;
+    font-size: 0.7rem;
   }
 
   .view-btn a {
-    padding: 8px 15px;
+    padding: 4px 10px;
   }
 
   /* Skills Styling*/
   #Skills {
-    height: 50vh;
+    height: 40vh;
   }
 
   .skills-heading {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 
   .skill-list {
-    font-size: 1rem;
+    font-size: 0.7rem;
   }
 
   /* Contact Section (Footer) Styling */
   #Contact {
-    height: 50vh;
+    height: 45vh;
   }
 
   .upper-section {
@@ -768,22 +761,22 @@ label input:checked ~ .botn {
   }
 
   .contact-heading {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 
   .contact-p,
   .mail,
   .phone {
-    font-size: 1rem;
+    font-size: 0.7rem;
   }
 
   .socials {
-    font-size: 2rem;
+    font-size: 1.5rem;
     gap: 2rem;
   }
 
   .copyright {
-    font-size: 1rem;
+    font-size: 0.7rem;
     height: 8vh;
   }
 }
