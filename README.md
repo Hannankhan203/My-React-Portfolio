@@ -1,31 +1,33 @@
 # 💼 Personal Portfolio - React.js
 
-This is my **personal portfolio website** built using **React.js**, designed to showcase my skills, projects, and provide a way for others to get in touch with me. The portfolio is still a **work in progress** but includes essential components and will be expanded with more interactive features.
+This is my **personal portfolio website** built using **React.js**, designed to showcase my skills, featured projects, and provide a way for others to get in touch with me. The portfolio is **fully responsive** and includes smooth navigation, dark/light mode, and complete content.
+
+---
 
 ## 📌 Live Demo
 
-🌐 **Hosted on:** [Netlify](https://my-react-portfolio-203.netlify.app/)
+🌐 **Hosted on Netlify:** [https://my-react-portfolio-203.netlify.app/](https://my-react-portfolio-203.netlify.app/)
 
 ---
 
 ## 🚀 Features
 
 - ⚛️ Built entirely with **React.js (.jsx)**.
-- 📄 Components structure:
-  - `Navbar.js`
-  - `HeroSection.js`
-  - `AboutMe.js`
-  - `Projects.js`
-  - `Skills.js`
-  - `Contact.js`
-- 🎨 Styled using **CSS** (custom styles for layout, colors, etc.).
-- 📱 Fully **responsive design** for mobile devices.
-- 🌙 **Dark Mode / Light Mode Toggle** using a **custom checkbox switch**.
-- 🔗 Social media links.
-- 🧭 Smooth navigation across all sections.
-- 🛠️ Modular and reusable component structure.
-- 🌐 Hosted on **Netlify**.
-- 📂 Code versioned using **Git** and hosted on **GitHub**.
+- 🎯 Fully **responsive design** for mobile screens.
+- 🌙 **Dark Mode / Light Mode** with a **custom checkbox toggle**.
+- 🧭 **Smooth scrolling navigation** across all sections.
+- 🔗 **Social media links** included for easy connection.
+- 🔄 **Modular component-based structure** for better scalability.
+- 🛠️ Components included:
+  - `Navbar.js` – Navigation bar with links
+  - `HeroSection.js` – Landing section with intro
+  - `AboutMe.js` – Personal background and skills
+  - `Projects.js` – Portfolio of featured projects
+  - `Skills.js` – Technical skillset list
+  - `Contact.js` – Contact form or email/social options
+- 🎨 **Custom CSS styling** for layout, colors, and transitions.
+- 📂 **Version control** with Git and hosted on **GitHub**.
+- 🌐 **Automatically deployed** to Netlify from GitHub with CI/CD.
 
 ---
 
@@ -34,21 +36,31 @@ This is my **personal portfolio website** built using **React.js**, designed to 
 | Technology     | Purpose                            |
 |----------------|------------------------------------|
 | React.js       | Core framework                     |
-| JSX            | React syntax extension             |
+| JSX            | Component-based structure          |
 | CSS            | Styling and layout                 |
 | HTML5          | Markup structure (via JSX)         |
 | JavaScript     | Logic and interactivity            |
-| Netlify        | Hosting & deployment               |
+| Netlify        | Continuous deployment & hosting    |
 | Git & GitHub   | Version control and code hosting   |
 
 ---
 
-## 🔧 To Be Added
+## 🆕 What's Next (Future Enhancements)
 
-- [ ] Final content for project descriptions and about section
+- [ ] Add animation effects using Framer Motion or CSS
+- [ ] Improve accessibility (keyboard navigation, ARIA tags)
+- [ ] Add downloadable resume button
+- [ ] Convert to TypeScript (optional future enhancement)
 
 ---
 
 ## 📷 Preview
 
-*Screenshots and demo gifs will be added after full responsiveness and styling are completed.*
+[▶ Watch demo video](./src/assets/My%20React%20Portfolio%20Light%20Mode.mp4)
+[▶ Watch demo video](./src/assets/My%20React%20Portfolio%20Dark%20Mode.mp4)
+
+---
+
+## 📌 Version
+
+**Current Version:** `v1.0.0` – Initial full release with all planned features completed.

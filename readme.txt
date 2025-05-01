@@ -6,15 +6,19 @@
 - Base CSS styling
 - React app structure
 
-## [0.0.6] - 2925-05-01
+## [0.0.6] - 2025-05-01
 ###Added
 - Social media links
+
+## [0.0.7] - 2025-05-01
+###Added
 - Navigation scroll behavior
 
-## [0.0.7] - 2925-05-01
+## [0.0.8] - 2025-05-01
 ###Added
 - Dark/light mode toggle
+- Responsive design
 
-## [0.0.8] - 2925-05-01
+## [0.0.9] - 2025-05-01
 ###Added
 - Responsive design
