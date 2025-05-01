@@ -6,7 +6,7 @@ import CurrencyConverter from '../assets/Currency Converter.PNG'
 import CoursingSite from '../assets/Coursing Site.PNG'
 
 
-function Projects() {
+function Projects({ darkMode }) {
     const projectsArray = [
         {
             title: "Weather App",
@@ -47,15 +47,15 @@ function Projects() {
 
     return (
         <section id="Projects">
-            <div className="projects-section">
-                <h2 className="projects-heading">My Projects</h2>
+            <div className={`projects-section ${darkMode ? "dark-mode" : "light-mode"}`}>
+                <h2 className={`projects-heading ${darkMode ? "dark-mode" : "light-mode"}`}>My Projects</h2>
                 <div className="projects">
                     {projectsArray.map((project, index)=> (
-                        <div className="project">
+                        <div className={`project ${darkMode ? "dark-mode" : "light-mode"}`}>
                             <h4 className="pro-head">{project.title}</h4>
                             <img className='pro-img' src={project.src} alt={project.alt} />
                             <p className="pro-tech">{project.tech}</p>
-                            <button className="view-btn"><a href={project.href} target='_blank'>View</a></button>
+                            <button className={`view-btn ${darkMode ? "dark-mode" : "light-mode"}`}><a href={project.href} target='_blank' className={darkMode ? "dark-mode" : "light-mode"}>View</a></button>
                         </div>
                     ))}
                 </div>
