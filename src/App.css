@@ -546,7 +546,7 @@ label input:checked ~ .botn {
 }
 
 .translating-Navbar {
-  transform: translateY(-80%);
+  transform: translateY(-81%);
   transition: 0.5s;
 }
 
@@ -556,7 +556,7 @@ label input:checked ~ .botn {
 }
 
 .translating-checkbox {
-  transform: translateY(-1000%);
+  transform: translateY(-1500%);
   transition: 0.5s;
 }
 
@@ -566,7 +566,7 @@ label input:checked ~ .botn {
 }
 
 /* Responsive Styling (Mobile) */
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 600px) {
   /* Navbar Styling */
   #Navbar {
     height: 37vh;
@@ -575,7 +575,7 @@ label input:checked ~ .botn {
   .nav-options {
     flex-direction: column;
     gap: 2rem;
-    font-size: 0.8rem;
+    font-size: 1rem;
   }
   .menu {
     position: fixed;
@@ -593,7 +593,7 @@ label input:checked ~ .botn {
 
   .menu-position {
     position: fixed;
-    top: 84%;
+    top: 85%;
     left: 10px;
   }
 
@@ -613,23 +613,23 @@ label input:checked ~ .botn {
   }
 
   .hero-heading {
-    font-size: 1.5rem;
+    font-size: 2rem;
     text-align: center;
     text-shadow: 0 0 10px #000;
     z-index: 1;
   }
 
   .hero-p {
-    font-size: 0.7rem;
+    font-size: 1rem;
     text-align: center;
   }
 
   .explore-btn {
-    font-size: 0.6rem;
+    font-size: 1rem;
   }
 
   .explore-btn a {
-    padding: 10px;
+    padding: 15px;
   }
 
   /* Custom Checkbox Styling */
@@ -680,7 +680,7 @@ label input:checked ~ .botn {
 
   /* About Section Styling */
   #About {
-    height: 120vh;
+    height: 130vh;
   }
 
   .about-section {
@@ -688,33 +688,31 @@ label input:checked ~ .botn {
   }
 
   .about-heading {
-    font-size: 1.5rem;
+    font-size: 2rem;
   }
 
   .profile-image {
-    width: 100px;
+    width: 150px;
   }
 
   .about-p {
-    font-size: 0.7rem;
+    font-size: 1rem;
   }
 
   .about-sub-heading {
-    font-size: 1.1rem;
+    font-size: 1.3rem;
   }
 
   .about-focus {
-    font-size: 0.7rem;
+    font-size: 1rem;
   }
 
   #Projects {
-    /* border: 2px solid black; */
-    padding: 20px;
-    height: 225vh;
+    height: 170vh;
   }
 
   .projects-heading {
-    font-size: 1.5rem;
+    font-size: 2rem;
   }
 
   .projects {
@@ -723,38 +721,37 @@ label input:checked ~ .botn {
 
   .pro-head,
   .pro-tech {
-    font-size: 0.7rem;
+    font-size: 1rem;
   }
 
   .pro-img {
-    width: 150px;
+    width: 200px;
   }
 
   .view-btn {
-    font-size: 0.7rem;
+    font-size: 1rem;
   }
 
   .view-btn a {
-    padding: 8px;
+    padding: 8px 15px;
   }
 
   /* Skills Styling*/
   #Skills {
-    padding: 20px;
-    height: 45vh;
+    height: 50vh;
   }
 
   .skills-heading {
-    font-size: 1.5rem;
+    font-size: 2rem;
   }
 
   .skill-list {
-    font-size: 0.7rem;
+    font-size: 1rem;
   }
 
   /* Contact Section (Footer) Styling */
   #Contact {
-    height: 45vh;
+    height: 50vh;
   }
 
   .upper-section {
@@ -765,23 +762,28 @@ label input:checked ~ .botn {
     gap: 1rem;
   }
 
+  .contact-section::before {
+    width: 100%;
+    height: 100%;
+  }
+
   .contact-heading {
-    font-size: 1.5rem;
+    font-size: 2rem;
   }
 
   .contact-p,
   .mail,
   .phone {
-    font-size: 0.7rem;
+    font-size: 1rem;
   }
 
   .socials {
-    font-size: 1.5rem;
+    font-size: 2rem;
     gap: 2rem;
   }
 
   .copyright {
-    font-size: 0.7rem;
+    font-size: 1rem;
     height: 8vh;
   }
 }

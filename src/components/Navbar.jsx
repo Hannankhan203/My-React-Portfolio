@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 
 function Navbar({ darkMode, setCheckboxTranslate }) {
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 576);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 600);
   const [navTranslate, setNavTranslate] = useState(false);
   const [menuPosition, setMenuPosition] = useState(false);
   const [navOptionsTranslate, setNavOptionsTranslate] = useState(false);
 
   useEffect(() => {
-    const mediaQuery = window.matchMedia(`(max-width: 576px)`);
+    const mediaQuery = window.matchMedia(`(max-width: 600px)`);
 
     const handleResize = () => setIsMobile(mediaQuery.matches);
 
