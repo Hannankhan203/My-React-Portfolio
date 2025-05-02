@@ -595,7 +595,7 @@ label input:checked ~ .botn {
 
   .menu-position {
     position: fixed;
-    top: 144px;
+    top: 81%;
     left: 12px;
   }
 
@@ -718,7 +718,7 @@ label input:checked ~ .botn {
 
   /* Projects Section Styling */
   #Projects {
-    height: 1700px;
+    height: 1750px;
   }
 
   .projects-heading {
@@ -753,7 +753,7 @@ label input:checked ~ .botn {
 
   /* Skills Styling*/
   #Skills {
-    height: 240px;
+    height: 280px;
   }
 
   .skills-heading {
@@ -766,7 +766,7 @@ label input:checked ~ .botn {
 
   /* Contact Section (Footer) Styling */
   #Contact {
-    height: 250px;
+    height: 280px;
   }
 
   .upper-section {
