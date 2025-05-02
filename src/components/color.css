@@ -1,13 +1,13 @@
 /* Universal */
 
 body.light-mode {
-  background-color: #f4f4f9;
+  background-color: #1e1e2f;
   color: #112d4e;
   transition: 0.5s;
 }
 
 body.dark-mode {
-  background-color: #1e1e2f;
+  background-color: #f4f4f9;
   color: #f5f5f5;
   transition: 0.5s;
 }
@@ -33,18 +33,16 @@ html {
 
 .menu.light-mode {
   color: #f4f4f9;
-  background-color: #3f72af;
   transition: 0.5s;
 }
 
 .menu.dark-mode {
   color: #f5f5f5;
-  background-color: #252836;
   transition: 0.5s;
 }
 
 #Navbar.light-mode {
-  background-color: #3f72af;
+  background-color: #00bcfb;
   transition: 0.5s;
 }
 

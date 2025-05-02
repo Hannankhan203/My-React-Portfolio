@@ -54,7 +54,7 @@ function Projects({ darkMode }) {
                         <div className={`project ${darkMode ? "dark-mode" : "light-mode"}`}>
                             <h4 className="pro-head">{project.title}</h4>
                             <img className='pro-img' src={project.src} alt={project.alt} />
-                            <p className="pro-tech">{project.tech}</p>
+                            <p className="pro-tech">Technologies Used: {project.tech}</p>
                             <button className={`view-btn ${darkMode ? "dark-mode" : "light-mode"}`}><a href={project.href} target='_blank' rel="noreferrer" className={darkMode ? "dark-mode" : "light-mode"}>View</a></button>
                         </div>
                     ))}
