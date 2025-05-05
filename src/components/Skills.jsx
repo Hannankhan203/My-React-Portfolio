@@ -8,7 +8,7 @@ function Skills({ darkMode }) {
     "Git & GitHub",
     "Responsive Design",
     "React (Basics)",
-    "Firebase Authentication (Web)"
+    "Firebase (Web) Authentication, Database"
   ];
 
   return (

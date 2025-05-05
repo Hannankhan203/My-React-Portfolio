@@ -332,7 +332,7 @@ label input:checked ~ .botn {
   /* border: 2px solid black; */
   /* padding: 20px; */
   margin-top: 5vh;
-  height: 245vh;
+  height: 255vh;
 }
 
 .projects-section {
@@ -427,7 +427,7 @@ label input:checked ~ .botn {
   /* border: 2px solid black; */
   /* padding: 20px; */
   margin-top: 5vh;
-  height: 50vh;
+  height: 55vh;
 }
 
 .skills-section {
@@ -718,7 +718,7 @@ label input:checked ~ .botn {
 
   /* Projects Section Styling */
   #Projects {
-    height: 1750px;
+    height: 2050px;
   }
 
   .projects-heading {
