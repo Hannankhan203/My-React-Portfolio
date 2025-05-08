@@ -1,7 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function HeroSection({ darkMode }) {
-
   return (
     <section
       id="Hero-Section"
@@ -19,10 +19,11 @@ function HeroSection({ darkMode }) {
       </p>
       <button
         className={`explore-btn ${darkMode ? "dark-mode" : "light-mode"}`}
+        aria-label="Explore my projects"
       >
-        <a href="#Projects" className={darkMode ? "dark-mode" : "light-mode"}>
+        <Link to="/projects" className={`explore-link ${darkMode ? "dark-mode" : "light-mode"}`}>
           Explore My Work
-        </a>
+        </Link>
       </button>
     </section>
   );
