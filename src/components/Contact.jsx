@@ -5,7 +5,7 @@ import {
   FaGithub,
   FaTwitter,
   FaInstagram,
-  FaLinkedin,
+  // FaLinkedin,
 } from "react-icons/fa";
 import { useForm } from "react-hook-form";
 
