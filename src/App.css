@@ -1,8 +1,16 @@
+/* Universal Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 /* Navbar Container */
 .nav-section {
   position: fixed;
   top: 0;
   width: 100%;
+  line-height: 8vh;
   z-index: 1000;
 }
 
@@ -50,11 +58,12 @@
 
 .nav-list {
   list-style: none;
+  font-size: 1.3rem;
+  text-decoration: none;
 }
 
-.nav-list .link {
+.link {
   text-decoration: none;
-  font-size: 1.3rem;
   transition: color 0.3s ease;
   padding: 0.5rem 0;
   position: relative;
@@ -105,10 +114,7 @@
   .nav-list {
     padding: 0.5rem 0;
     border-bottom: 1px solid rgba(128, 128, 128, 0.2);
-  }
-
-  .nav-list .link {
-    font-size: 0.8rem;
+    font-size: 1rem;
   }
 }
 
@@ -127,7 +133,7 @@
 
 /* Hero Section Container */
 #Hero-Section {
-  min-height: 89vh;
+  min-height: 100vh;
   /* border: 2px solid black; */
   display: flex;
   flex-direction: column;
@@ -224,6 +230,10 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  #Hero-Section {
+  min-height: 100vh;
+}
+
   .hero-heading {
     font-size: 1.8rem;
   }

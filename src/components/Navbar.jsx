@@ -47,42 +47,42 @@ function Navbar({ darkMode, setCheckboxTranslate }) {
             isMobile && navOptionsTranslate ? "" : "translating-nav-options"
           }`}
         >
-          <li className="nav-list">
             <NavLink
               to="/about"
               className={`link ${darkMode ? "dark-mode" : "light-mode"}`}
               style={({ isActive }) => (isActive ? activeStyle : undefined)}
             >
-              About
-            </NavLink>
-          </li>
           <li className="nav-list">
+              About
+          </li>
+            </NavLink>
             <NavLink
               to="/projects"
               className={`link ${darkMode ? "dark-mode" : "light-mode"}`}
               style={({ isActive }) => (isActive ? activeStyle : undefined)}
             >
-              Projects
-            </NavLink>
-          </li>
           <li className="nav-list">
+              Projects
+          </li>
+            </NavLink>
             <NavLink
               to="/skills"
               className={`link ${darkMode ? "dark-mode" : "light-mode"}`}
               style={({ isActive }) => (isActive ? activeStyle : undefined)}
             >
-              Skills
-            </NavLink>
-          </li>
           <li className="nav-list">
+              Skills
+          </li>
+            </NavLink>
             <NavLink
               to="/contact"
               className={`link ${darkMode ? "dark-mode" : "light-mode"}`}
               style={({ isActive }) => (isActive ? activeStyle : undefined)}
             >
+          <li className="nav-list">
               Contact
-            </NavLink>
           </li>
+            </NavLink>
         </ul>
       </nav>
     </div>
