@@ -47,42 +47,34 @@ function Navbar({ darkMode, setCheckboxTranslate }) {
             isMobile && navOptionsTranslate ? "" : "translating-nav-options"
           }`}
         >
-            <NavLink
-              to="/about"
-              className={`link ${darkMode ? "dark-mode" : "light-mode"}`}
-              style={({ isActive }) => (isActive ? activeStyle : undefined)}
-            >
-          <li className="nav-list">
-              About
-          </li>
-            </NavLink>
-            <NavLink
-              to="/projects"
-              className={`link ${darkMode ? "dark-mode" : "light-mode"}`}
-              style={({ isActive }) => (isActive ? activeStyle : undefined)}
-            >
-          <li className="nav-list">
-              Projects
-          </li>
-            </NavLink>
-            <NavLink
-              to="/skills"
-              className={`link ${darkMode ? "dark-mode" : "light-mode"}`}
-              style={({ isActive }) => (isActive ? activeStyle : undefined)}
-            >
-          <li className="nav-list">
-              Skills
-          </li>
-            </NavLink>
-            <NavLink
-              to="/contact"
-              className={`link ${darkMode ? "dark-mode" : "light-mode"}`}
-              style={({ isActive }) => (isActive ? activeStyle : undefined)}
-            >
-          <li className="nav-list">
-              Contact
-          </li>
-            </NavLink>
+          <NavLink
+            to="/about"
+            className={`link ${darkMode ? "dark-mode" : "light-mode"}`}
+            style={({ isActive }) => (isActive ? activeStyle : undefined)}
+          >
+            <li className="nav-list">About</li>
+          </NavLink>
+          <NavLink
+            to="/projects"
+            className={`link ${darkMode ? "dark-mode" : "light-mode"}`}
+            style={({ isActive }) => (isActive ? activeStyle : undefined)}
+          >
+            <li className="nav-list">Projects</li>
+          </NavLink>
+          <NavLink
+            to="/skills"
+            className={`link ${darkMode ? "dark-mode" : "light-mode"}`}
+            style={({ isActive }) => (isActive ? activeStyle : undefined)}
+          >
+            <li className="nav-list">Skills</li>
+          </NavLink>
+          <NavLink
+            to="/contact"
+            className={`link ${darkMode ? "dark-mode" : "light-mode"}`}
+            style={({ isActive }) => (isActive ? activeStyle : undefined)}
+          >
+            <li className="nav-list">Contact</li>
+          </NavLink>
         </ul>
       </nav>
     </div>
@@ -90,4 +82,3 @@ function Navbar({ darkMode, setCheckboxTranslate }) {
 }
 
 export default Navbar;
-  

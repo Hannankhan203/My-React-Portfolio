@@ -16,7 +16,8 @@ function App({ activeStyle }) {
   });
 
   const [checkboxTranslate, setCheckboxTranslate] = useState(false);
-  const [navbarOpen, setNavbarOpen] = useState(false); // New state for navbar toggle
+  const [navbarOpen, setNavbarOpen] = useState(false);
+  //  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     localStorage.setItem("darkMode", JSON.stringify(darkMode));
@@ -26,6 +27,10 @@ function App({ activeStyle }) {
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
     setCheckboxTranslate(!checkboxTranslate);
+  };
+
+  const handleLinkClick = () => {
+    setNavbarOpen(false);
   };
 
   const toggleNavbar = () => {
@@ -73,41 +78,37 @@ function App({ activeStyle }) {
           <nav>
             <ul>
               <NavLink
-                  to="/about"
-                  className={`link ${darkMode ? "dark-mode" : "light-mode"}`}
-                  style={({ isActive }) => (isActive ? activeStyle : undefined)}
-                >
-              <li className="nav-list">
-                  About
-              </li>
-                </NavLink>
-                <NavLink
-                  to="/projects"
-                  className={`link ${darkMode ? "dark-mode" : "light-mode"}`}
-                  style={({ isActive }) => (isActive ? activeStyle : undefined)}
-                >
-              <li className="nav-list">
-                  Projects
-              </li>
-                </NavLink>
-                <NavLink
-                  to="/skills"
-                  className={`link ${darkMode ? "dark-mode" : "light-mode"}`}
-                  style={({ isActive }) => (isActive ? activeStyle : undefined)}
-                >
-              <li className="nav-list">
-                  Skills
-              </li>
-                </NavLink>
-                <NavLink
-                  to="/contact"
-                  className={`link ${darkMode ? "dark-mode" : "light-mode"}`}
-                  style={({ isActive }) => (isActive ? activeStyle : undefined)}
-                >
-              <li className="nav-list">
-                  Contact
-              </li>
-                </NavLink>
+                to="/about"
+                className={`link ${darkMode ? "dark-mode" : "light-mode"}`}
+                style={({ isActive }) => (isActive ? activeStyle : undefined)}
+                onClick={handleLinkClick}
+              >
+                <li className="nav-list">About</li>
+              </NavLink>
+              <NavLink
+                to="/projects"
+                className={`link ${darkMode ? "dark-mode" : "light-mode"}`}
+                style={({ isActive }) => (isActive ? activeStyle : undefined)}
+                onClick={handleLinkClick}
+              >
+                <li className="nav-list">Projects</li>
+              </NavLink>
+              <NavLink
+                to="/skills"
+                className={`link ${darkMode ? "dark-mode" : "light-mode"}`}
+                style={({ isActive }) => (isActive ? activeStyle : undefined)}
+                onClick={handleLinkClick}
+              >
+                <li className="nav-list">Skills</li>
+              </NavLink>
+              <NavLink
+                to="/contact"
+                className={`link ${darkMode ? "dark-mode" : "light-mode"}`}
+                style={({ isActive }) => (isActive ? activeStyle : undefined)}
+                onClick={handleLinkClick}
+              >
+                <li className="nav-list">Contact</li>
+              </NavLink>
             </ul>
           </nav>
           <div className="theme-toggle-mobile">
