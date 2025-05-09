@@ -11,7 +11,7 @@ function Skills({ darkMode }) {
     {
       title: "Backend & Databases",
       icon: <FaServer className="skill-icon" />,
-      skills: ["Firebase Authentication", "Firebase Database", "REST APIs"],
+      skills: ["Firebase Authentication", "Firebase Database"],
     },
     {
       title: "Tools & Version Control",
@@ -21,7 +21,7 @@ function Skills({ darkMode }) {
     {
       title: "UI/UX Design",
       icon: <FaPalette className="skill-icon" />,
-      skills: ["Figma Basics", "CSS Animations", "User-Centered Design"],
+      skills: ["CSS Animations", "Animate.style (Library)"],
     },
   ];
 

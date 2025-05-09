@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import HeroSection from "./components/HeroSection";
@@ -10,9 +10,18 @@ import { NavLink } from "react-router-dom";
 import "./App.css";
 
 function App({ activeStyle }) {
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(() => {
+    const savedMode = localStorage.getItem("darkMode");
+    return savedMode ? JSON.parse(savedMode) : false;
+  });
+
   const [checkboxTranslate, setCheckboxTranslate] = useState(false);
   const [navbarOpen, setNavbarOpen] = useState(false); // New state for navbar toggle
+
+  useEffect(() => {
+    localStorage.setItem("darkMode", JSON.stringify(darkMode));
+    setCheckboxTranslate(darkMode); // Sync the toggle position
+  }, [darkMode]);
 
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
