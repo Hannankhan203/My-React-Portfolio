@@ -6,9 +6,10 @@ import About from "./components/About";
 import Projects from "./components/Projects";
 import Skills from "./components/Skills";
 import Contact from "./components/Contact";
+import { NavLink } from "react-router-dom";
 import "./App.css";
 
-function App() {
+function App({ activeStyle }) {
   const [darkMode, setDarkMode] = useState(false);
   const [checkboxTranslate, setCheckboxTranslate] = useState(false);
   const [navbarOpen, setNavbarOpen] = useState(false); // New state for navbar toggle
@@ -62,20 +63,41 @@ function App() {
         <div className={`navbar-mobile ${navbarOpen ? "open" : ""}`}>
           <nav>
             <ul>
-              <li>
-                <a href="/">Home</a>
+              <li className="nav-list">
+                <NavLink
+                  to="/about"
+                  className={`link ${darkMode ? "dark-mode" : "light-mode"}`}
+                  style={({ isActive }) => (isActive ? activeStyle : undefined)}
+                >
+                  About
+                </NavLink>
               </li>
-              <li>
-                <a href="/about">About</a>
+              <li className="nav-list">
+                <NavLink
+                  to="/projects"
+                  className={`link ${darkMode ? "dark-mode" : "light-mode"}`}
+                  style={({ isActive }) => (isActive ? activeStyle : undefined)}
+                >
+                  Projects
+                </NavLink>
               </li>
-              <li>
-                <a href="/projects">Projects</a>
+              <li className="nav-list">
+                <NavLink
+                  to="/skills"
+                  className={`link ${darkMode ? "dark-mode" : "light-mode"}`}
+                  style={({ isActive }) => (isActive ? activeStyle : undefined)}
+                >
+                  Skills
+                </NavLink>
               </li>
-              <li>
-                <a href="/skills">Skills</a>
-              </li>
-              <li>
-                <a href="/contact">Contact</a>
+              <li className="nav-list">
+                <NavLink
+                  to="/contact"
+                  className={`link ${darkMode ? "dark-mode" : "light-mode"}`}
+                  style={({ isActive }) => (isActive ? activeStyle : undefined)}
+                >
+                  Contact
+                </NavLink>
               </li>
             </ul>
           </nav>
