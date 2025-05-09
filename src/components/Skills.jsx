@@ -6,7 +6,7 @@ function Skills({ darkMode }) {
     {
       title: "Frontend Development",
       icon: <FaCode className="skill-icon" />,
-      skills: ["HTML5", "CSS3", "JavaScript", "React", "Responsive Design"],
+      skills: ["HTML5", "CSS3", "JavaScript", "React", "Responsive Design", "React Router DOM"],
     },
     {
       title: "Backend & Databases",
