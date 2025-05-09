@@ -30,3 +30,7 @@
 ## [1.0.1] - 2025-05-02
 ###Enhanced
 - User Interface
+
+##[v2.0.0] - 2025-05-09
+###Enhanced
+- Shifted from basic React to React Router DOM for improved routing and navigation, with all planned features completed.
