@@ -1152,7 +1152,7 @@ input:checked + .slider:before {
     padding: 50px 10px 10px;
     z-index: 9;
     transform: translateY(-100%); /* Initially hidden above the screen */
-    transition: transform 0.3s ease-in-out; /* Transition for smooth sliding effect */
+    transition: transform 0.5s ease-in-out; /* Transition for smooth sliding effect */
   }
 
   /* When navbar is open, apply translateY(0) to slide it down */
@@ -1200,7 +1200,7 @@ input:checked + .slider:before {
 
 /* App-wide Styling */
 .app-container {
-  transition: padding-top 0.3s ease-in-out; /* Transition for content margin */
+  transition: padding-top 0.5s ease-in-out; /* Transition for content margin */
 }
 
 /* Dark Mode / Light Mode */
