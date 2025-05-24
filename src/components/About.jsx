@@ -1,7 +1,42 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import profileImage from "../assets/My Picture.jpg";
+import { gsap } from "gsap";
 
 function About({ darkMode }) {
+  const imageRef = useRef(null);
+  const textRef = useRef(null);
+
+  useEffect(() => {
+    gsap.fromTo(
+      imageRef.current,
+      {
+        x: 200,
+        opacity: 0,
+      },
+      {
+        x: 0,
+        opacity: 1,
+        duration: 1,
+        ease: "power2.out",
+      }
+    );
+
+    gsap.fromTo(
+      textRef.current,
+      {
+        x: -100,
+        opacity: 0,
+      },
+      {
+        x: 0,
+        opacity: 1,
+        duration: 1,
+        ease: "power2.out",
+        delay: 0.3,
+      }
+    );
+  }, []);
+
   return (
     <div className={`about-container ${darkMode ? "dark-mode" : "light-mode"}`}>
       <div className="about-content">
@@ -11,8 +46,13 @@ function About({ darkMode }) {
           About Me
         </h2>
         <div className="about-grid">
-          <img src={profileImage} alt="Profile" className="profile-image" />
-          <div className="about-text">
+          <img
+            ref={imageRef}
+            src={profileImage}
+            alt="Profile"
+            className="profile-image"
+          />
+          <div ref={textRef} className="about-text">
             <p className={`about-p ${darkMode ? "dark-mode" : "light-mode"}`}>
               Hello! I'm <strong>Abdul Hannan Khan</strong>, a passionate and
               dedicated Computer Science student at the{" "}
