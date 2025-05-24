@@ -19,6 +19,7 @@ This is my **personal portfolio website** built using **React.js**, designed to 
 - 🧭 **Smooth scrolling navigation** across all sections.
 - 🔗 **Social media links** included for easy connection.
 - 🔄 **Modular component-based structure** for better scalability.
+- ✨ **GSAP animations** for smooth, engaging transitions.
 - 🛠️ Components included:
   - `Navbar.js` – Navigation bar with links
   - `HeroSection.js` – Landing section with intro

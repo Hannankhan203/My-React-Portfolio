@@ -34,3 +34,7 @@
 ##[v2.0.0] - 2025-05-09
 ###Enhanced
 - Shifted from basic React to React Router DOM for improved routing and navigation, with all planned features completed.
+
+##[v2.1.0] - 2025-05-24
+###Enhanced
+- Added GSAP Animations for smooth transitions
