@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
+import { gsap } from "gsap";
 import {
   FaEnvelope,
   FaPhone,
@@ -10,6 +11,41 @@ import {
 import { useForm } from "react-hook-form";
 
 function Contact({ darkMode }) {
+  const contactInfoRef = useRef(null);
+  const contactFormRef = useRef(null);
+
+  useEffect(() => {
+    gsap.fromTo(
+      contactInfoRef.current,
+      {
+        x: 200,
+        opacity: 0,
+      },
+      {
+        x: 0,
+        opacity: 1,
+        duration: 1,
+        ease: "power2.out",
+      }
+    );
+
+    gsap.fromTo(
+      contactFormRef.current,
+      {
+        x: -100,
+        opacity: 0,
+      },
+      {
+        x: 0,
+        opacity: 1,
+        duration: 1,
+        ease: "power2.out",
+        delay: 0.3,
+      }
+    );
+  }, []);
+
+
   const {
     register,
     handleSubmit,
@@ -33,7 +69,7 @@ function Contact({ darkMode }) {
         </h2>
 
         <div className="contact-grid">
-          <div className="contact-info">
+          <div className="contact-info" ref={contactInfoRef}>
             <h3
               className={`contact-subheading ${
                 darkMode ? "dark-mode" : "light-mode"
@@ -116,7 +152,7 @@ function Contact({ darkMode }) {
             </div>
           </div>
 
-          <form onSubmit={handleSubmit(onSubmit)} className="contact-form">
+          <form onSubmit={handleSubmit(onSubmit)} className="contact-form" ref={contactFormRef}>
             <div className="form-group">
               <label htmlFor="name">Name</label>
               <input
