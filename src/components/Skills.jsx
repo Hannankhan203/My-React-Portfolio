@@ -41,7 +41,7 @@ function Skills({ darkMode }) {
     {
       title: "UI/UX Design",
       icon: <FaPalette className="skill-icon" />,
-      skills: ["CSS Animations", "Animate.style (Library)"],
+      skills: ["CSS Animations", "Animate.style (Library)", "GSAP"],
     },
   ];
 
