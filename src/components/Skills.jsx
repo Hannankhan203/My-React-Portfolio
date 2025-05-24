@@ -1,7 +1,27 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import { FaCode, FaPalette, FaServer, FaTools } from "react-icons/fa";
+import { gsap } from 'gsap';
 
 function Skills({ darkMode }) {
+  const skillCategoryRef = useRef([]);
+
+  useEffect(() => {
+    skillCategoryRef.current.forEach((skill, index) => {
+          gsap.fromTo(skill, 
+          {
+            y: 1000,
+            opacity: 0,
+          },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 1,
+            ease: "power2.out",
+            delay: index * 0.2,
+          }
+        )
+        })
+  }, [])
   const skillsCategories = [
     {
       title: "Frontend Development",
@@ -39,6 +59,7 @@ function Skills({ darkMode }) {
         <div className="skills-grid">
           {skillsCategories.map((category, index) => (
             <div
+            ref={(el) => (skillCategoryRef.current[index] = el)}
               key={index}
               className={`skill-category ${
                 darkMode ? "dark-mode" : "light-mode"
