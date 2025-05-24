@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
+import { gsap } from 'gsap';
 import { Link } from "react-router-dom";
 import WeatherAppImg from "../assets/Weather app.PNG";
 import ScientificCalculator from "../assets/Scientific Calculator.PNG";
@@ -8,6 +9,26 @@ import CoursingSite from "../assets/Coursing Site.PNG";
 import AuthenticationForm from "../assets/Authentication Form.PNG";
 
 function Projects({ darkMode }) {
+  const projectCardRef = useRef([]);
+
+  useEffect(() => {
+    projectCardRef.current.forEach((card, index) => {
+      gsap.fromTo(card, 
+      {
+        y: 1000,
+        opacity: 0,
+      },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 1,
+        ease: "power2.out",
+        delay: index * 0.2,
+      }
+    )
+    })
+  }, [])
+
   const projectsArray = [
     {
       id: 1,
@@ -73,8 +94,9 @@ function Projects({ darkMode }) {
         </h2>
 
         <div className="projects-grid">
-          {projectsArray.map((project) => (
+          {projectsArray.map((project, index) => (
             <div
+            ref={(el) => (projectCardRef.current[index] = el)}
               key={project.id}
               className={`project-card ${
                 darkMode ? "dark-mode" : "light-mode"
