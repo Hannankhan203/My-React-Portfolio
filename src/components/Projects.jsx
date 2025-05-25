@@ -1,5 +1,6 @@
 import React, { useRef, useEffect } from "react";
-import { gsap } from 'gsap';
+import { gsap } from "gsap";
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Link } from "react-router-dom";
 import WeatherAppImg from "../assets/Weather app.PNG";
 import ScientificCalculator from "../assets/Scientific Calculator.PNG";
@@ -8,26 +9,37 @@ import CurrencyConverter from "../assets/Currency Converter.PNG";
 import CoursingSite from "../assets/Coursing Site.PNG";
 import AuthenticationForm from "../assets/Authentication Form.PNG";
 
+gsap.registerPlugin(ScrollTrigger);
+
 function Projects({ darkMode }) {
   const projectCardRef = useRef([]);
+  const containerRef = useRef(null);
 
   useEffect(() => {
+    gsap.killTweensOf(projectCardRef.current);
+
+    gsap.set(projectCardRef.current, {
+      opacity: 0,
+      y: 50
+    });
+
     projectCardRef.current.forEach((card, index) => {
-      gsap.fromTo(card, 
+    gsap.fromTo(
+      card,
+      { opacity: 0, y: 50 },
       {
-        y: 1000,
-        opacity: 0,
-      },
-      {
-        y: 0,
         opacity: 1,
+        y: 0,
         duration: 1,
-        ease: "power2.out",
-        delay: index * 0.2,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: card,
+          start: "top 80%",
+        },
       }
-    )
-    })
-  }, [])
+    );
+  });
+}, []);
 
   const projectsArray = [
     {
@@ -81,7 +93,7 @@ function Projects({ darkMode }) {
   ];
 
   return (
-    <div
+    <div ref={containerRef}
       className={`projects-container ${darkMode ? "dark-mode" : "light-mode"}`}
     >
       <div className="projects-content">
@@ -96,7 +108,7 @@ function Projects({ darkMode }) {
         <div className="projects-grid">
           {projectsArray.map((project, index) => (
             <div
-            ref={(el) => (projectCardRef.current[index] = el)}
+              ref={(el) => (projectCardRef.current[index] = el)}
               key={project.id}
               className={`project-card ${
                 darkMode ? "dark-mode" : "light-mode"
