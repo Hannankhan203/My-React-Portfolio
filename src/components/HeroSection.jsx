@@ -8,43 +8,43 @@ function HeroSection({ darkMode }) {
   const buttonRef = useRef(null);
 
   useEffect(() => {
-    gsap.fromTo(headingRef.current, 
+    gsap.set([headingRef.current, paraRef.current, buttonRef.current], {
+      opacity: 0,
+    });
+
+    const t1 = gsap.timeline({ defaults: { ease: "power3.out" } });
+
+    t1.fromTo(headingRef.current, 
       {
-        y: -400,
-        opacity: 0,
+        y: -200,
       }, 
       {
         y: 0,
         opacity: 1,
-        duration: 1,
-        ease: "power2.out",
+        duration: 1.5
       }
     )
-
-    gsap.fromTo(paraRef.current, 
+    .fromTo(paraRef.current, 
       {
-        x: -400,
-        opacity: 0,
-      }, 
+        x: -200,
+      },
       {
         x: 0,
         opacity: 1,
-        duration: 1,
-        ease: "power2.out",
-      }
+        duration: 1.5
+      },
+      "-=0"
     )
-
-    gsap.fromTo(buttonRef.current, 
+    .fromTo(buttonRef.current, 
       {
-        y: 500,
-        opacity: 0,
-      }, 
+        y: 200,
+      },
       {
         y: 0,
         opacity: 1,
-        duration: 0.8,
-        ease: "expo.out",
-      }
+        duration: 1.5
+      },
+      "-=0"
     )
   }, []);
   return (
@@ -52,17 +52,17 @@ function HeroSection({ darkMode }) {
       id="Hero-Section"
       className={darkMode ? "dark-mode" : "light-mode"}
     >
-      <h1 ref={headingRef} className={`hero-heading ${darkMode ? "dark-mode" : "light-mode"}`}>
+      <h1 style={{ opacity: 0 }} ref={headingRef} className={`hero-heading ${darkMode ? "dark-mode" : "light-mode"}`}>
         Hi, I'm{" "}
         <span id="my-name" className={darkMode ? "dark-mode" : "light-mode"}>
           Abdul Hannan Khan
         </span>
       </h1>
-      <p ref={paraRef} className={`hero-p ${darkMode ? "dark-mode" : "light-mode"}`}>
+      <p style={{ opacity: 0 }} ref={paraRef} className={`hero-p ${darkMode ? "dark-mode" : "light-mode"}`}>
         Front-End Developer | Creative Thinker | Responsive UI Builder | Growth
         Mindset
       </p>
-      <button ref={buttonRef}
+      <button style={{ opacity: 0 }} ref={buttonRef}
         className={`explore-btn ${darkMode ? "dark-mode" : "light-mode"}`}
         aria-label="Explore my projects"
       >
