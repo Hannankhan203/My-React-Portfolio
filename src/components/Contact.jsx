@@ -15,36 +15,24 @@ function Contact({ darkMode }) {
   const contactFormRef = useRef(null);
 
   useEffect(() => {
-    gsap.fromTo(
-      contactInfoRef.current,
-      {
-        x: 200,
-        opacity: 0,
-      },
-      {
-        x: 0,
-        opacity: 1,
-        duration: 1,
-        ease: "power2.out",
-      }
-    );
+    gsap.set([contactInfoRef.current, contactFormRef.current], {
+      opacity: 0,
+    });
 
-    gsap.fromTo(
+    const t1 = gsap.timeline({ defaults: { ease: "power3.out" } });
+
+    t1.fromTo(
+      contactInfoRef.current,
+      { x: 200 },
+      { x: 0, opacity: 1, duration: 1.5 },
+      "-=0"
+    ).fromTo(
       contactFormRef.current,
-      {
-        x: -100,
-        opacity: 0,
-      },
-      {
-        x: 0,
-        opacity: 1,
-        duration: 1,
-        ease: "power2.out",
-        delay: 0.3,
-      }
+      { x: -200 },
+      { x: 0, opacity: 1, duration: 1.5 },
+      "-=0"
     );
   }, []);
-
 
   const {
     register,
