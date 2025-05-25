@@ -7,33 +7,22 @@ function About({ darkMode }) {
   const textRef = useRef(null);
 
   useEffect(() => {
-    gsap.fromTo(
-      imageRef.current,
-      {
-        x: 200,
-        opacity: 0,
-      },
-      {
-        x: 0,
-        opacity: 1,
-        duration: 1,
-        ease: "power2.out",
-      }
-    );
+    gsap.set([imageRef.current, textRef.current], {
+      opacity: 0,
+    });
 
-    gsap.fromTo(
+    const t1 = gsap.timeline({ defaults: { ease: "power3.out" } });
+
+    t1.fromTo(
+      imageRef.current,
+      { x: 200 },
+      { x: 0, opacity: 1, duration: 1.5 },
+      "-=0"
+    ).fromTo(
       textRef.current,
-      {
-        x: -100,
-        opacity: 0,
-      },
-      {
-        x: 0,
-        opacity: 1,
-        duration: 1,
-        ease: "power2.out",
-        delay: 0.3,
-      }
+      { x: -200 },
+      { x: 0, opacity: 1, duration: 1.5 },
+      "-=0"
     );
   }, []);
 
