@@ -1,32 +1,52 @@
 import React, { useRef, useEffect } from "react";
 import { FaCode, FaPalette, FaServer, FaTools } from "react-icons/fa";
-import { gsap } from 'gsap';
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 function Skills({ darkMode }) {
   const skillCategoryRef = useRef([]);
+  const containerRef = useRef(null);
 
   useEffect(() => {
-    skillCategoryRef.current.forEach((skill, index) => {
-          gsap.fromTo(skill, 
-          {
-            y: 1000,
-            opacity: 0,
+    gsap.killTweensOf(skillCategoryRef.current);
+
+    gsap.set(skillCategoryRef.current, {
+      opacity: 0,
+      y: 50,
+    });
+
+    skillCategoryRef.current.forEach((card, index) => {
+      gsap.fromTo(
+        card,
+        { opacity: 0, y: 50 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: card,
+            start: "top 80%",
           },
-          {
-            y: 0,
-            opacity: 1,
-            duration: 1,
-            ease: "power2.out",
-            delay: index * 0.2,
-          }
-        )
-        })
-  }, [])
+        }
+      );
+    });
+  }, []);
+
   const skillsCategories = [
     {
       title: "Frontend Development",
       icon: <FaCode className="skill-icon" />,
-      skills: ["HTML5", "CSS3", "JavaScript", "React", "Responsive Design", "React Router DOM"],
+      skills: [
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "React",
+        "Responsive Design",
+        "React Router DOM",
+      ],
     },
     {
       title: "Backend & Databases",
@@ -47,6 +67,7 @@ function Skills({ darkMode }) {
 
   return (
     <div
+      ref={containerRef}
       className={`skills-container ${darkMode ? "dark-mode" : "light-mode"}`}
     >
       <div className="skills-content">
@@ -59,7 +80,7 @@ function Skills({ darkMode }) {
         <div className="skills-grid">
           {skillsCategories.map((category, index) => (
             <div
-            ref={(el) => (skillCategoryRef.current[index] = el)}
+              ref={(el) => (skillCategoryRef.current[index] = el)}
               key={index}
               className={`skill-category ${
                 darkMode ? "dark-mode" : "light-mode"

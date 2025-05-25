@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from "react";
 import { gsap } from "gsap";
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Link } from "react-router-dom";
 import WeatherAppImg from "../assets/Weather app.PNG";
 import ScientificCalculator from "../assets/Scientific Calculator.PNG";
@@ -20,26 +20,26 @@ function Projects({ darkMode }) {
 
     gsap.set(projectCardRef.current, {
       opacity: 0,
-      y: 50
+      y: 50,
     });
 
     projectCardRef.current.forEach((card, index) => {
-    gsap.fromTo(
-      card,
-      { opacity: 0, y: 50 },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 1,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: card,
-          start: "top 80%",
-        },
-      }
-    );
-  });
-}, []);
+      gsap.fromTo(
+        card,
+        { opacity: 0, y: 50 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: card,
+            start: "top 80%",
+          },
+        }
+      );
+    });
+  }, []);
 
   const projectsArray = [
     {
@@ -93,7 +93,8 @@ function Projects({ darkMode }) {
   ];
 
   return (
-    <div ref={containerRef}
+    <div
+      ref={containerRef}
       className={`projects-container ${darkMode ? "dark-mode" : "light-mode"}`}
     >
       <div className="projects-content">
