@@ -22,7 +22,7 @@ function HeroSection({ darkMode }) {
       {
         y: 0,
         opacity: 1,
-        duration: 1.5,
+        duration: 1,
       }
     )
       .fromTo(
@@ -33,7 +33,7 @@ function HeroSection({ darkMode }) {
         {
           x: 0,
           opacity: 1,
-          duration: 1.5,
+          duration: 1,
         },
         "-=0"
       )
@@ -45,7 +45,7 @@ function HeroSection({ darkMode }) {
         {
           y: 0,
           opacity: 1,
-          duration: 1.5,
+          duration: 1,
         },
         "-=0"
       );

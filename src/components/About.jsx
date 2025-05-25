@@ -16,12 +16,12 @@ function About({ darkMode }) {
     t1.fromTo(
       imageRef.current,
       { x: 200 },
-      { x: 0, opacity: 1, duration: 1.5 },
+      { x: 0, opacity: 1, duration: 1 },
       "-=0"
     ).fromTo(
       textRef.current,
       { x: -200 },
-      { x: 0, opacity: 1, duration: 1.5 },
+      { x: 0, opacity: 1, duration: 1 },
       "-=0"
     );
   }, []);

@@ -24,12 +24,12 @@ function Contact({ darkMode }) {
     t1.fromTo(
       contactInfoRef.current,
       { x: 200 },
-      { x: 0, opacity: 1, duration: 1.5 },
+      { x: 0, opacity: 1, duration: 1 },
       "-=0"
     ).fromTo(
       contactFormRef.current,
       { x: -200 },
-      { x: 0, opacity: 1, duration: 1.5 },
+      { x: 0, opacity: 1, duration: 1 },
       "-=0"
     );
   }, []);
