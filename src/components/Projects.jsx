@@ -8,6 +8,7 @@ import Notes from "../assets/Notes.PNG";
 import CurrencyConverter from "../assets/Currency Converter.PNG";
 import CoursingSite from "../assets/Coursing Site.PNG";
 import AuthenticationForm from "../assets/Authentication Form.PNG";
+import NextGenWeb from "../assets/NextGen Web.png";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -90,6 +91,14 @@ function Projects({ darkMode }) {
       tech: "HTML, CSS, JavaScript, Firebase",
       href: "https://authentication-form-203.netlify.app/",
     },
+    {
+      id: 7,
+      title: "Landing Page (GSAP Integration)",
+      src: NextGenWeb,
+      alt: "Landing Page (GSAP Integration)",
+      tech: "HTML, CSS, JavaScript, GSAP",
+      href: "https://hannankhan203.github.io/Landing-Page-GSAP-Integration/"
+    }
   ];
 
   return (
