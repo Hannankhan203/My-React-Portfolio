@@ -9,6 +9,7 @@ import CurrencyConverter from "../assets/Currency Converter.PNG";
 import CoursingSite from "../assets/Coursing Site.PNG";
 import AuthenticationForm from "../assets/Authentication Form.PNG";
 import NextGenWeb from "../assets/NextGen Web.png";
+import ScrollMagic from "../assets/Scroll Magic.png";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -98,7 +99,15 @@ function Projects({ darkMode }) {
       alt: "Landing Page (GSAP Integration)",
       tech: "HTML, CSS, JavaScript, GSAP",
       href: "https://hannankhan203.github.io/Landing-Page-GSAP-Integration/"
-    }
+    },
+    {
+      id: 8,
+      title: "Scroll Magic (GSAP Integration)",
+      src: ScrollMagic,
+      alt: "Scroll Magic (GSAP Integration)",
+      tech: "HTML, CSS, JavaScript, GSAP",
+      href: "https://scroll-magic-gsap.netlify.app/"
+    },
   ];
 
   return (
