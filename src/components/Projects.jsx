@@ -8,7 +8,7 @@ import Notes from "../assets/Notes.PNG";
 import CurrencyConverter from "../assets/Currency Converter.PNG";
 import CoursingSite from "../assets/Coursing Site.PNG";
 import AuthenticationForm from "../assets/Authentication Form.PNG";
-import NextGenWeb from "../assets/NextGen Web.png";
+import TypingSpeedTest from "../assets/Typing Speed Test.png";
 import ScrollMagic from "../assets/Scroll Magic.png";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -94,11 +94,11 @@ function Projects({ darkMode }) {
     },
     {
       id: 7,
-      title: "Landing Page (GSAP Integration)",
-      src: NextGenWeb,
-      alt: "Landing Page (GSAP Integration)",
-      tech: "HTML, CSS, JavaScript, GSAP",
-      href: "https://hannankhan203.github.io/Landing-Page-GSAP-Integration/"
+      title: "Typing Speed Test",
+      src: TypingSpeedTest,
+      alt: "Typing Speed Test",
+      tech: "HTML, CSS, JavaScript, TypeScript",
+      href: "https://hannankhan203.github.io/Typing-Speed-Test/"
     },
     {
       id: 8,
