@@ -67,7 +67,7 @@ function App({ activeStyle }) {
         </div>
 
         {/* Hamburger Menu for mobile */}
-        <div className="hamburger-menu" onClick={toggleNavbar}>
+        <div className={`hamburger-menu ${navbarOpen ? 'active' : ''}`} onClick={toggleNavbar}>
           <div className="bar"></div>
           <div className="bar"></div>
           <div className="bar"></div>
