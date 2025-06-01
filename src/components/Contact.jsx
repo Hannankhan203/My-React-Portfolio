@@ -155,6 +155,9 @@ function Contact({ darkMode }) {
       "-=0.5"
     );
 
+    // Force ScrollTrigger to refresh after setup
+    ScrollTrigger.refresh();
+
     // Hover animations for social icons
     socialIconsNodes.forEach((icon) => {
       const hoverTl = gsap.timeline({ paused: true });
@@ -227,6 +230,11 @@ function Contact({ darkMode }) {
           input.removeEventListener("blur", input._focusHandlers.onBlur);
         }
       });
+
+      // Reset refs arrays to prevent stale references on remount
+      socialIconsRef.current = [];
+      contactItemsRef.current = [];
+      formInputsRef.current = [];
     };
   }, [darkMode]);
 
