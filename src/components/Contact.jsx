@@ -22,6 +22,19 @@ function Contact({ darkMode }) {
   const contactItemsRef = useRef([]);
   const formInputsRef = useRef([]);
 
+  // Helper functions to safely assign refs in array refs
+  const setSocialIconRef = (index) => (el) => {
+    socialIconsRef.current[index] = el;
+  };
+
+  const setContactItemRef = (index) => (el) => {
+    contactItemsRef.current[index] = el;
+  };
+
+  const setFormInputRef = (index) => (el) => {
+    formInputsRef.current[index] = el;
+  };
+
   const {
     register,
     handleSubmit,
@@ -29,8 +42,9 @@ function Contact({ darkMode }) {
   } = useForm();
 
   useEffect(() => {
-    const socialIconsNodes = [...socialIconsRef.current];
-    const formInputsNodes = [...formInputsRef.current];
+    // Use refs directly without spreading (fixes ESLint warnings)
+    const socialIconsNodes = socialIconsRef.current;
+    const formInputsNodes = formInputsRef.current;
 
     // Initial states
     gsap.set([contactInfoRef.current, contactFormRef.current], {
@@ -43,7 +57,7 @@ function Contact({ darkMode }) {
       y: 50,
     });
 
-    gsap.set(socialIconsRef.current, {
+    gsap.set(socialIconsNodes, {
       opacity: 0,
       scale: 0.5,
       rotate: -180,
@@ -54,7 +68,7 @@ function Contact({ darkMode }) {
       x: -50,
     });
 
-    gsap.set(formInputsRef.current, {
+    gsap.set(formInputsNodes, {
       opacity: 0,
       y: 30,
     });
@@ -104,7 +118,7 @@ function Contact({ darkMode }) {
 
     // Social icons animation with rotation
     mainTl.to(
-      socialIconsRef.current,
+      socialIconsNodes,
       {
         opacity: 1,
         scale: 1,
@@ -130,7 +144,7 @@ function Contact({ darkMode }) {
 
     // Form inputs staggered animation
     mainTl.to(
-      formInputsRef.current,
+      formInputsNodes,
       {
         opacity: 1,
         y: 0,
@@ -142,7 +156,7 @@ function Contact({ darkMode }) {
     );
 
     // Hover animations for social icons
-    socialIconsRef.current.forEach((icon) => {
+    socialIconsNodes.forEach((icon) => {
       const hoverTl = gsap.timeline({ paused: true });
 
       hoverTl.to(icon, {
@@ -162,7 +176,7 @@ function Contact({ darkMode }) {
     });
 
     // Form input focus animations
-    formInputsRef.current.forEach((input) => {
+    formInputsNodes.forEach((input) => {
       const focusTl = gsap.timeline({ paused: true });
 
       focusTl
@@ -192,80 +206,27 @@ function Contact({ darkMode }) {
     });
 
     return () => {
-      const hoverHandlers = new Map();
-      const focusHandlers = new Map();
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
 
-      socialIconsRef.current.forEach((icon) => {
-        const hoverTl = gsap.timeline({ paused: true });
-
-        hoverTl.to(icon, {
-          scale: 1.2,
-          rotate: 360,
-          duration: 0.4,
-          ease: "power2.out",
-        });
-
-        const handleMouseEnter = () => hoverTl.play();
-        const handleMouseLeave = () => hoverTl.reverse();
-
-        icon.addEventListener("mouseenter", handleMouseEnter);
-        icon.addEventListener("mouseleave", handleMouseLeave);
-
-        hoverHandlers.set(icon, { handleMouseEnter, handleMouseLeave });
-      });
-
-      formInputsRef.current.forEach((input) => {
-        const focusTl = gsap.timeline({ paused: true });
-
-        focusTl
-          .to(input, {
-            scale: 1.02,
-            duration: 0.3,
-            ease: "power2.out",
-          })
-          .to(
-            input.parentElement.querySelector("label"),
-            {
-              y: -3,
-              color: darkMode ? "#64ffda" : "#007bff",
-              duration: 0.3,
-              ease: "power2.out",
-            },
-            0
+      socialIconsNodes.forEach((icon) => {
+        if (icon._hoverHandlers) {
+          icon.removeEventListener(
+            "mouseenter",
+            icon._hoverHandlers.onMouseEnter
           );
-
-        const handleFocus = () => focusTl.play();
-        const handleBlur = () => focusTl.reverse();
-
-        input.addEventListener("focus", handleFocus);
-        input.addEventListener("blur", handleBlur);
-
-        focusHandlers.set(input, { handleFocus, handleBlur });
+          icon.removeEventListener(
+            "mouseleave",
+            icon._hoverHandlers.onMouseLeave
+          );
+        }
       });
 
-      return () => {
-        ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-
-        socialIconsRef.current.forEach((icon) => {
-          if (icon._hoverHandlers) {
-            icon.removeEventListener(
-              "mouseenter",
-              icon._hoverHandlers.onMouseEnter
-            );
-            icon.removeEventListener(
-              "mouseleave",
-              icon._hoverHandlers.onMouseLeave
-            );
-          }
-        });
-
-        formInputsRef.current.forEach((input) => {
-          if (input._focusHandlers) {
-            input.removeEventListener("focus", input._focusHandlers.onFocus);
-            input.removeEventListener("blur", input._focusHandlers.onBlur);
-          }
-        });
-      };
+      formInputsNodes.forEach((input) => {
+        if (input._focusHandlers) {
+          input.removeEventListener("focus", input._focusHandlers.onFocus);
+          input.removeEventListener("blur", input._focusHandlers.onBlur);
+        }
+      });
     };
   }, [darkMode]);
 
@@ -290,7 +251,7 @@ function Contact({ darkMode }) {
         <div className="contact-grid">
           <div className="contact-info" ref={contactInfoRef}>
             <h3
-              ref={(el) => (contactItemsRef.current[0] = el)}
+              ref={setContactItemRef(0)}
               className={`contact-subheading ${
                 darkMode ? "dark-mode" : "light-mode"
               }`}
@@ -299,12 +260,9 @@ function Contact({ darkMode }) {
             </h3>
 
             <div className="contact-details">
-              <div
-                className="contact-item"
-                ref={(el) => (contactItemsRef.current[1] = el)}
-              >
+              <div className="contact-item" ref={setContactItemRef(1)}>
                 <FaEnvelope
-                  ref={(el) => (socialIconsRef.current[0] = el)}
+                  ref={setSocialIconRef(0)}
                   className={`contact-icon ${
                     darkMode ? "dark-mode" : "light-mode"
                   }`}
@@ -322,12 +280,9 @@ function Contact({ darkMode }) {
                 </div>
               </div>
 
-              <div
-                className="contact-item"
-                ref={(el) => (contactItemsRef.current[2] = el)}
-              >
+              <div className="contact-item" ref={setContactItemRef(2)}>
                 <FaPhone
-                  ref={(el) => (socialIconsRef.current[1] = el)}
+                  ref={setSocialIconRef(1)}
                   className={`contact-icon ${
                     darkMode ? "dark-mode" : "light-mode"
                   }`}
@@ -345,10 +300,7 @@ function Contact({ darkMode }) {
                 </div>
               </div>
 
-              <div
-                className="social-links"
-                ref={(el) => (contactItemsRef.current[3] = el)}
-              >
+              <div className="social-links" ref={setContactItemRef(3)}>
                 <a
                   href="https://github.com/Hannankhan203"
                   target="_blank"
@@ -356,7 +308,7 @@ function Contact({ darkMode }) {
                   aria-label="GitHub"
                 >
                   <FaGithub
-                    ref={(el) => (socialIconsRef.current[2] = el)}
+                    ref={setSocialIconRef(2)}
                     className={`social-icon ${
                       darkMode ? "dark-mode" : "light-mode"
                     }`}
@@ -369,7 +321,7 @@ function Contact({ darkMode }) {
                   aria-label="Twitter"
                 >
                   <FaTwitter
-                    ref={(el) => (socialIconsRef.current[3] = el)}
+                    ref={setSocialIconRef(3)}
                     className={`social-icon ${
                       darkMode ? "dark-mode" : "light-mode"
                     }`}
@@ -382,7 +334,7 @@ function Contact({ darkMode }) {
                   aria-label="Instagram"
                 >
                   <FaInstagram
-                    ref={(el) => (socialIconsRef.current[4] = el)}
+                    ref={setSocialIconRef(4)}
                     className={`social-icon ${
                       darkMode ? "dark-mode" : "light-mode"
                     }`}
@@ -404,7 +356,7 @@ function Contact({ darkMode }) {
             <div className="form-group">
               <label htmlFor="name">Name</label>
               <input
-                ref={(el) => (formInputsRef.current[0] = el)}
+                ref={setFormInputRef(0)}
                 id="name"
                 type="text"
                 {...register("name", { required: "Name is required" })}
@@ -418,7 +370,7 @@ function Contact({ darkMode }) {
             <div className="form-group">
               <label htmlFor="email">Email</label>
               <input
-                ref={(el) => (formInputsRef.current[1] = el)}
+                ref={setFormInputRef(1)}
                 id="email"
                 type="email"
                 {...register("email", {
@@ -438,7 +390,7 @@ function Contact({ darkMode }) {
             <div className="form-group">
               <label htmlFor="message">Message</label>
               <textarea
-                ref={(el) => (formInputsRef.current[2] = el)}
+                ref={setFormInputRef(2)}
                 id="message"
                 rows="5"
                 {...register("message", {
