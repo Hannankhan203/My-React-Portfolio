@@ -18,12 +18,12 @@ function About({ darkMode }) {
     // Initial states
     gsap.set([headingRef.current, imageRef.current, textContainerRef.current], {
       opacity: 0,
-      y: 50
+      y: 50,
     });
-    
+
     gsap.set(skillItemRefs.current, {
       opacity: 0,
-      x: -30
+      x: -30,
     });
 
     // Main timeline
@@ -32,8 +32,8 @@ function About({ darkMode }) {
         trigger: sectionRef.current,
         start: "top center",
         end: "center center",
-        toggleActions: "play none none reverse"
-      }
+        toggleActions: "play none none reverse",
+      },
     });
 
     // Animate main elements
@@ -41,20 +41,28 @@ function About({ darkMode }) {
       opacity: 1,
       y: 0,
       duration: 0.8,
-      ease: "power3.out"
+      ease: "power3.out",
     })
-    .to(imageRef.current, {
-      opacity: 1,
-      y: 0,
-      duration: 0.8,
-      ease: "power3.out"
-    }, "-=0.4")
-    .to(textContainerRef.current, {
-      opacity: 1,
-      y: 0,
-      duration: 0.8,
-      ease: "power3.out"
-    }, "-=0.4");
+      .to(
+        imageRef.current,
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          ease: "power3.out",
+        },
+        "-=0.4"
+      )
+      .to(
+        textContainerRef.current,
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          ease: "power3.out",
+        },
+        "-=0.4"
+      );
 
     // Animate paragraphs with stagger
     gsap.to(paragraphRefs.current, {
@@ -66,8 +74,8 @@ function About({ darkMode }) {
       scrollTrigger: {
         trigger: textContainerRef.current,
         start: "top center+=100",
-        toggleActions: "play none none reverse"
-      }
+        toggleActions: "play none none reverse",
+      },
     });
 
     // Skills section animation
@@ -75,8 +83,8 @@ function About({ darkMode }) {
       scrollTrigger: {
         trigger: skillsRef.current,
         start: "top center+=100",
-        toggleActions: "play none none reverse"
-      }
+        toggleActions: "play none none reverse",
+      },
     });
 
     skillsTl.to(skillItemRefs.current, {
@@ -84,7 +92,7 @@ function About({ darkMode }) {
       x: 0,
       duration: 0.6,
       stagger: 0.1,
-      ease: "power3.out"
+      ease: "power3.out",
     });
 
     // Image hover effect
@@ -92,16 +100,21 @@ function About({ darkMode }) {
       scale: 1.05,
       duration: 0.3,
       paused: true,
-      ease: "power2.out"
+      ease: "power2.out",
     });
 
-    imageRef.current.addEventListener("mouseenter", () => imageHover.play());
-    imageRef.current.addEventListener("mouseleave", () => imageHover.reverse());
+    const imageElement = imageRef.current;
+
+    const handleMouseEnter = () => imageHover.play();
+    const handleMouseLeave = () => imageHover.reverse();
+
+    imageElement.addEventListener("mouseenter", handleMouseEnter);
+    imageElement.addEventListener("mouseleave", handleMouseLeave);
 
     return () => {
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-      imageRef.current?.removeEventListener("mouseenter", () => {});
-      imageRef.current?.removeEventListener("mouseleave", () => {});
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+      imageElement?.removeEventListener("mouseenter", handleMouseEnter);
+      imageElement?.removeEventListener("mouseleave", handleMouseLeave);
     };
   }, []);
 
@@ -114,7 +127,7 @@ function About({ darkMode }) {
         <h2 ref={headingRef} className="about-heading">
           About Me
         </h2>
-        
+
         <div className="about-content">
           <div className="about-image-container">
             <img
@@ -127,17 +140,30 @@ function About({ darkMode }) {
           </div>
 
           <div ref={textContainerRef} className="about-text-container">
-            <p ref={el => paragraphRefs.current[0] = el} className="about-paragraph">
-              Hello! I'm <strong>Abdul Hannan Khan</strong>, a passionate and dedicated Computer Science 
-              student at the <strong>National University of Modern Languages (NUML)</strong>. I have a 
-              strong interest in <strong>Front-End Web Development</strong> and modern software practices.
+            <p
+              ref={(el) => (paragraphRefs.current[0] = el)}
+              className="about-paragraph"
+            >
+              Hello! I'm <strong>Abdul Hannan Khan</strong>, a passionate and
+              dedicated Computer Science student at the{" "}
+              <strong>National University of Modern Languages (NUML)</strong>. I
+              have a strong interest in{" "}
+              <strong>Front-End Web Development</strong> and modern software
+              practices.
             </p>
 
-            <p ref={el => paragraphRefs.current[1] = el} className="about-paragraph">
-              I enjoy bringing ideas to life through <strong>clean</strong>, <strong>responsive</strong>, 
-              and <strong>interactive websites</strong>. My learning journey is currently focused on 
-              becoming a <strong>MERN Stack Developer</strong>, and I actively work on enhancing my 
-              <strong>problem-solving</strong>, <strong>logical thinking</strong>, and 
+            <p
+              ref={(el) => (paragraphRefs.current[1] = el)}
+              className="about-paragraph"
+            >
+              I enjoy bringing ideas to life through <strong>clean</strong>,{" "}
+              <strong>responsive</strong>, and{" "}
+              <strong>interactive websites</strong>. My learning journey is
+              currently focused on becoming a{" "}
+              <strong>MERN Stack Developer</strong>, and I actively work on
+              enhancing my
+              <strong>problem-solving</strong>,{" "}
+              <strong>logical thinking</strong>, and
               <strong>collaboration skills</strong>.
             </p>
 
@@ -150,11 +176,11 @@ function About({ darkMode }) {
                   "Building real-world web projects",
                   "Writing clean, efficient, and scalable code",
                   "Continuous learning and growth",
-                  "Collaborative development"
+                  "Collaborative development",
                 ].map((skill, index) => (
                   <li
                     key={skill}
-                    ref={el => skillItemRefs.current[index] = el}
+                    ref={(el) => (skillItemRefs.current[index] = el)}
                     className="skill-item"
                   >
                     {skill}
@@ -163,8 +189,12 @@ function About({ darkMode }) {
               </ul>
             </div>
 
-            <p ref={el => paragraphRefs.current[2] = el} className="about-paragraph highlight-text">
-              💡 Whether it's <strong>coding</strong>, <strong>collaborating</strong>, or 
+            <p
+              ref={(el) => (paragraphRefs.current[2] = el)}
+              className="about-paragraph highlight-text"
+            >
+              💡 Whether it's <strong>coding</strong>,{" "}
+              <strong>collaborating</strong>, or
               <strong>continuous learning</strong> - I'm always ready to grow!
             </p>
           </div>

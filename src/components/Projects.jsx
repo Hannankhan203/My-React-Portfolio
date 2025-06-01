@@ -24,12 +24,12 @@ function Projects({ darkMode }) {
     // Initial states
     gsap.set(headingRef.current, {
       opacity: 0,
-      y: 50
+      y: 50,
     });
 
     gsap.set(projectRefs.current, {
       opacity: 0,
-      y: 100
+      y: 100,
     });
 
     // Heading animation
@@ -41,64 +41,80 @@ function Projects({ darkMode }) {
       scrollTrigger: {
         trigger: sectionRef.current,
         start: "top center+=100",
-        toggleActions: "play none none reverse"
-      }
+        toggleActions: "play none none reverse",
+      },
     });
 
     // Project cards animation
+    const hoverHandlers = [];
+
     projectRefs.current.forEach((project, index) => {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: project,
           start: "top center+=100",
-          toggleActions: "play none none reverse"
-        }
+          toggleActions: "play none none reverse",
+        },
       });
 
-      // Image reveal animation
       tl.to(projectImagesRef.current[index], {
         clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
         duration: 1.2,
-        ease: "power4.out"
+        ease: "power4.out",
       })
-      .to(project, {
-        opacity: 1,
-        y: 0,
-        duration: 1,
-        ease: "power3.out"
-      }, "-=0.8")
-      .to(projectContentRef.current[index], {
-        opacity: 1,
-        y: 0,
-        duration: 0.8,
-        ease: "power3.out"
-      }, "-=0.6");
+        .to(
+          project,
+          {
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            ease: "power3.out",
+          },
+          "-=0.8"
+        )
+        .to(
+          projectContentRef.current[index],
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            ease: "power3.out",
+          },
+          "-=0.6"
+        );
 
-      // Hover animations
+      // Hover animation
       const hoverTl = gsap.timeline({ paused: true });
-      
       hoverTl
         .to(project, {
           y: -10,
           duration: 0.3,
-          ease: "power2.out"
+          ease: "power2.out",
         })
-        .to(projectImagesRef.current[index], {
-          scale: 1.05,
-          duration: 0.3,
-          ease: "power2.out"
-        }, 0);
+        .to(
+          projectImagesRef.current[index],
+          {
+            scale: 1.05,
+            duration: 0.3,
+            ease: "power2.out",
+          },
+          0
+        );
 
-      // Add hover event listeners
-      project.addEventListener("mouseenter", () => hoverTl.play());
-      project.addEventListener("mouseleave", () => hoverTl.reverse());
+      const onEnter = () => hoverTl.play();
+      const onLeave = () => hoverTl.reverse();
+
+      project.addEventListener("mouseenter", onEnter);
+      project.addEventListener("mouseleave", onLeave);
+
+      hoverHandlers.push({ project, onEnter, onLeave });
     });
 
     return () => {
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-      projectRefs.current.forEach(project => {
-        project?.removeEventListener("mouseenter", () => {});
-        project?.removeEventListener("mouseleave", () => {});
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+      hoverHandlers.forEach(({ project, onEnter, onLeave }) => {
+        project.removeEventListener("mouseenter", onEnter);
+        project.removeEventListener("mouseleave", onLeave);
       });
     };
   }, []);
@@ -158,7 +174,7 @@ function Projects({ darkMode }) {
       src: TypingSpeedTest,
       alt: "Typing Speed Test",
       tech: "HTML, CSS, JavaScript, TypeScript",
-      href: "https://hannankhan203.github.io/Typing-Speed-Test/"
+      href: "https://hannankhan203.github.io/Typing-Speed-Test/",
     },
     {
       id: 8,
@@ -166,7 +182,7 @@ function Projects({ darkMode }) {
       src: ScrollMagic,
       alt: "Scroll Magic (GSAP Integration)",
       tech: "HTML, CSS, JavaScript, GSAP",
-      href: "https://scroll-magic-gsap.netlify.app/"
+      href: "https://scroll-magic-gsap.netlify.app/",
     },
   ];
 
@@ -184,12 +200,12 @@ function Projects({ darkMode }) {
           {projectsArray.map((project, index) => (
             <div
               key={project.id}
-              ref={el => (projectRefs.current[index] = el)}
+              ref={(el) => (projectRefs.current[index] = el)}
               className="project-card"
             >
               <div className="project-image-container">
                 <img
-                  ref={el => (projectImagesRef.current[index] = el)}
+                  ref={(el) => (projectImagesRef.current[index] = el)}
                   src={project.src}
                   alt={project.alt}
                   className="project-image"
@@ -202,7 +218,7 @@ function Projects({ darkMode }) {
               </div>
 
               <div
-                ref={el => (projectContentRef.current[index] = el)}
+                ref={(el) => (projectContentRef.current[index] = el)}
                 className="project-content"
               >
                 <h3 className="project-title">{project.title}</h3>

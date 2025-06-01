@@ -12,7 +12,8 @@ function Skills({ darkMode }) {
 
   useEffect(() => {
     // Heading animation
-    gsap.fromTo(headingRef.current,
+    gsap.fromTo(
+      headingRef.current,
       { y: 50, opacity: 0 },
       {
         opacity: 1,
@@ -22,14 +23,15 @@ function Skills({ darkMode }) {
         scrollTrigger: {
           trigger: sectionRef.current,
           start: "top center+=100",
-          toggleActions: "play none none reverse"
-        }
+          toggleActions: "play none none reverse",
+        },
       }
     );
 
     // Categories animation
     categoryRefs.current.forEach((category, index) => {
-      gsap.fromTo(category,
+      gsap.fromTo(
+        category,
         { y: 50, opacity: 0 },
         {
           opacity: 1,
@@ -40,14 +42,14 @@ function Skills({ darkMode }) {
           scrollTrigger: {
             trigger: category,
             start: "top center+=150",
-            toggleActions: "play none none reverse"
-          }
+            toggleActions: "play none none reverse",
+          },
         }
       );
     });
 
     return () => {
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
   }, []);
 
@@ -55,31 +57,17 @@ function Skills({ darkMode }) {
     {
       title: "Front-End Development",
       icon: <FaCode className="skill-icon" />,
-      skills: [
-        "HTML5",
-        "CSS3",
-        "JavaScript",
-        "React.js",
-        "TypeScript",
-      ]
+      skills: ["HTML5", "CSS3", "JavaScript", "React.js", "TypeScript"],
     },
     {
       title: "Back-End Development",
       icon: <FaDatabase className="skill-icon" />,
-      skills: [
-        "Firebase Authentication",
-        "Firebase Database",
-      ]
+      skills: ["Firebase Authentication", "Firebase Database"],
     },
     {
       title: "Development Tools",
       icon: <FaTools className="skill-icon" />,
-      skills: [
-        "VS Code",
-        "Git",
-        "GitHub",
-        "Netlify",
-      ]
+      skills: ["VS Code", "Git", "GitHub", "Netlify"],
     },
     {
       title: "UI/UX & Design",
@@ -93,8 +81,8 @@ function Skills({ darkMode }) {
         "Bootstrap",
         "Animate.style (library)",
         "GSAP",
-      ]
-    }
+      ],
+    },
   ];
 
   return (
@@ -111,7 +99,7 @@ function Skills({ darkMode }) {
           {skillCategories.map((category, categoryIndex) => (
             <div
               key={category.title}
-              ref={el => (categoryRefs.current[categoryIndex] = el)}
+              ref={(el) => (categoryRefs.current[categoryIndex] = el)}
               className="skill-category"
             >
               <div className="category-header">
@@ -121,10 +109,7 @@ function Skills({ darkMode }) {
 
               <ul className="skills-list">
                 {category.skills.map((skill, skillIndex) => (
-                  <li
-                    key={skill}
-                    className="skill-item"
-                  >
+                  <li key={skill} className="skill-item">
                     {skill}
                   </li>
                 ))}
