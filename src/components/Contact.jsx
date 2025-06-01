@@ -29,6 +29,9 @@ function Contact({ darkMode }) {
   } = useForm();
 
   useEffect(() => {
+    const socialIconsNodes = [...socialIconsRef.current];
+    const formInputsNodes = [...formInputsRef.current];
+
     // Initial states
     gsap.set([contactInfoRef.current, contactFormRef.current], {
       opacity: 0,
@@ -149,8 +152,13 @@ function Contact({ darkMode }) {
         ease: "power2.out",
       });
 
-      icon.addEventListener("mouseenter", () => hoverTl.play());
-      icon.addEventListener("mouseleave", () => hoverTl.reverse());
+      const onMouseEnter = () => hoverTl.play();
+      const onMouseLeave = () => hoverTl.reverse();
+
+      icon.addEventListener("mouseenter", onMouseEnter);
+      icon.addEventListener("mouseleave", onMouseLeave);
+
+      icon._hoverHandlers = { onMouseEnter, onMouseLeave };
     });
 
     // Form input focus animations
@@ -174,8 +182,13 @@ function Contact({ darkMode }) {
           0
         );
 
-      input.addEventListener("focus", () => focusTl.play());
-      input.addEventListener("blur", () => focusTl.reverse());
+      const onFocus = () => focusTl.play();
+      const onBlur = () => focusTl.reverse();
+
+      input.addEventListener("focus", onFocus);
+      input.addEventListener("blur", onBlur);
+
+      input._focusHandlers = { onFocus, onBlur };
     });
 
     return () => {
@@ -234,18 +247,22 @@ function Contact({ darkMode }) {
         ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
 
         socialIconsRef.current.forEach((icon) => {
-          const handlers = hoverHandlers.get(icon);
-          if (handlers) {
-            icon.removeEventListener("mouseenter", handlers.handleMouseEnter);
-            icon.removeEventListener("mouseleave", handlers.handleMouseLeave);
+          if (icon._hoverHandlers) {
+            icon.removeEventListener(
+              "mouseenter",
+              icon._hoverHandlers.onMouseEnter
+            );
+            icon.removeEventListener(
+              "mouseleave",
+              icon._hoverHandlers.onMouseLeave
+            );
           }
         });
 
         formInputsRef.current.forEach((input) => {
-          const handlers = focusHandlers.get(input);
-          if (handlers) {
-            input.removeEventListener("focus", handlers.handleFocus);
-            input.removeEventListener("blur", handlers.handleBlur);
+          if (input._focusHandlers) {
+            input.removeEventListener("focus", input._focusHandlers.onFocus);
+            input.removeEventListener("blur", input._focusHandlers.onBlur);
           }
         });
       };
