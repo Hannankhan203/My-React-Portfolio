@@ -7,7 +7,6 @@ import {
   FaGithub,
   FaTwitter,
   FaInstagram,
-  // FaLinkedin,
 } from "react-icons/fa";
 import { useForm } from "react-hook-form";
 
@@ -42,8 +41,8 @@ function Contact({ darkMode }) {
   } = useForm();
 
   useEffect(() => {
-    const socialIconsNodes = socialIconsRef.current;
-    const formInputsNodes = formInputsRef.current;
+    const socialIconsNodes = socialIconsRef.current.filter(Boolean);
+    const formInputsNodes = formInputsRef.current.filter(Boolean);
 
     // Initial states
     gsap.set([contactInfoRef.current, contactFormRef.current], {
@@ -62,7 +61,7 @@ function Contact({ darkMode }) {
       rotate: -180,
     });
 
-    gsap.set(contactItemsRef.current, {
+    gsap.set(contactItemsRef.current.filter(Boolean), {
       opacity: 0,
       x: -50,
     });
@@ -101,7 +100,7 @@ function Contact({ darkMode }) {
     );
 
     mainTl.to(
-      contactItemsRef.current,
+      contactItemsRef.current.filter(Boolean),
       {
         opacity: 1,
         x: 0,
@@ -152,6 +151,8 @@ function Contact({ darkMode }) {
 
     // Hover animations for social icons
     socialIconsNodes.forEach((icon) => {
+      if (!icon) return;
+
       const hoverTl = gsap.timeline({ paused: true });
 
       hoverTl.to(icon, {
@@ -172,6 +173,8 @@ function Contact({ darkMode }) {
 
     // Form input focus animations
     formInputsNodes.forEach((input) => {
+      if (!input) return;
+
       const focusTl = gsap.timeline({ paused: true });
 
       focusTl
@@ -211,9 +214,16 @@ function Contact({ darkMode }) {
           y: 0,
         });
         gsap.set(headingRef.current, { opacity: 1, y: 0 });
-        gsap.set(socialIconsRef.current, { opacity: 1, scale: 1, rotate: 0 });
-        gsap.set(contactItemsRef.current, { opacity: 1, x: 0 });
-        gsap.set(formInputsRef.current, { opacity: 1, y: 0 });
+        gsap.set(socialIconsRef.current.filter(Boolean), {
+          opacity: 1,
+          scale: 1,
+          rotate: 0,
+        });
+        gsap.set(contactItemsRef.current.filter(Boolean), {
+          opacity: 1,
+          x: 0,
+        });
+        gsap.set(formInputsRef.current.filter(Boolean), { opacity: 1, y: 0 });
       }
     };
 
@@ -224,7 +234,7 @@ function Contact({ darkMode }) {
       ScrollTrigger.clearScrollMemory();
 
       socialIconsNodes.forEach((icon) => {
-        if (icon._hoverHandlers) {
+        if (icon && icon._hoverHandlers) {
           icon.removeEventListener(
             "mouseenter",
             icon._hoverHandlers.onMouseEnter
@@ -233,13 +243,15 @@ function Contact({ darkMode }) {
             "mouseleave",
             icon._hoverHandlers.onMouseLeave
           );
+          delete icon._hoverHandlers;
         }
       });
 
       formInputsNodes.forEach((input) => {
-        if (input._focusHandlers) {
+        if (input && input._focusHandlers) {
           input.removeEventListener("focus", input._focusHandlers.onFocus);
           input.removeEventListener("blur", input._focusHandlers.onBlur);
+          delete input._focusHandlers;
         }
       });
 
@@ -361,10 +373,6 @@ function Contact({ darkMode }) {
                     }`}
                   />
                 </a>
-                {/* Add your LinkedIn if available */}
-                {/* <a href="#" target="_blank" rel="noopener noreferrer">
-                  <FaLinkedin className="social-icon" />
-                </a> */}
               </div>
             </div>
           </div>
