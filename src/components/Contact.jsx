@@ -209,8 +209,13 @@ function Contact({ darkMode }) {
     });
 
     return () => {
+      // Kill all ScrollTriggers
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
 
+      // Clear ScrollTrigger's internal scroll memory to avoid blank page on back navigation
+      ScrollTrigger.clearScrollMemory();
+
+      // Remove event listeners from social icons
       socialIconsNodes.forEach((icon) => {
         if (icon._hoverHandlers) {
           icon.removeEventListener(
@@ -224,6 +229,7 @@ function Contact({ darkMode }) {
         }
       });
 
+      // Remove event listeners from form inputs
       formInputsNodes.forEach((input) => {
         if (input._focusHandlers) {
           input.removeEventListener("focus", input._focusHandlers.onFocus);
