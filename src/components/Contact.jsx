@@ -42,7 +42,6 @@ function Contact({ darkMode }) {
   } = useForm();
 
   useEffect(() => {
-    // Use refs directly without spreading (fixes ESLint warnings)
     const socialIconsNodes = socialIconsRef.current;
     const formInputsNodes = formInputsRef.current;
 
@@ -83,7 +82,6 @@ function Contact({ darkMode }) {
       },
     });
 
-    // Heading animation with text reveal effect
     mainTl.to(headingRef.current, {
       opacity: 1,
       y: 0,
@@ -91,7 +89,6 @@ function Contact({ darkMode }) {
       ease: "power3.out",
     });
 
-    // Contact info section animation
     mainTl.to(
       contactInfoRef.current,
       {
@@ -103,7 +100,6 @@ function Contact({ darkMode }) {
       "-=0.5"
     );
 
-    // Contact items staggered animation
     mainTl.to(
       contactItemsRef.current,
       {
@@ -116,7 +112,6 @@ function Contact({ darkMode }) {
       "-=0.5"
     );
 
-    // Social icons animation with rotation
     mainTl.to(
       socialIconsNodes,
       {
@@ -130,7 +125,6 @@ function Contact({ darkMode }) {
       "-=0.3"
     );
 
-    // Form animation
     mainTl.to(
       contactFormRef.current,
       {
@@ -142,7 +136,6 @@ function Contact({ darkMode }) {
       "-=0.8"
     );
 
-    // Form inputs staggered animation
     mainTl.to(
       formInputsNodes,
       {
@@ -155,7 +148,6 @@ function Contact({ darkMode }) {
       "-=0.5"
     );
 
-    // Force ScrollTrigger to refresh after setup
     ScrollTrigger.refresh();
 
     // Hover animations for social icons
@@ -208,14 +200,29 @@ function Contact({ darkMode }) {
       input._focusHandlers = { onFocus, onBlur };
     });
 
-    return () => {
-      // Kill all ScrollTriggers
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+    // Handle browser back/forward cache and refresh ScrollTrigger & reset styles
+    const onPageShow = (event) => {
+      if (event.persisted) {
+        ScrollTrigger.refresh(true);
 
-      // Clear ScrollTrigger's internal scroll memory to avoid blank page on back navigation
+        // Reset all elements to visible/normal positions
+        gsap.set([contactInfoRef.current, contactFormRef.current], {
+          opacity: 1,
+          y: 0,
+        });
+        gsap.set(headingRef.current, { opacity: 1, y: 0 });
+        gsap.set(socialIconsRef.current, { opacity: 1, scale: 1, rotate: 0 });
+        gsap.set(contactItemsRef.current, { opacity: 1, x: 0 });
+        gsap.set(formInputsRef.current, { opacity: 1, y: 0 });
+      }
+    };
+
+    window.addEventListener("pageshow", onPageShow);
+
+    return () => {
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
       ScrollTrigger.clearScrollMemory();
 
-      // Remove event listeners from social icons
       socialIconsNodes.forEach((icon) => {
         if (icon._hoverHandlers) {
           icon.removeEventListener(
@@ -229,7 +236,6 @@ function Contact({ darkMode }) {
         }
       });
 
-      // Remove event listeners from form inputs
       formInputsNodes.forEach((input) => {
         if (input._focusHandlers) {
           input.removeEventListener("focus", input._focusHandlers.onFocus);
@@ -237,7 +243,8 @@ function Contact({ darkMode }) {
         }
       });
 
-      // Reset refs arrays to prevent stale references on remount
+      window.removeEventListener("pageshow", onPageShow);
+
       socialIconsRef.current = [];
       contactItemsRef.current = [];
       formInputsRef.current = [];
