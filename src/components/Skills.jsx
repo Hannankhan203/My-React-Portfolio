@@ -1,102 +1,129 @@
 import React, { useRef, useEffect } from "react";
-import { FaCode, FaPalette, FaServer, FaTools } from "react-icons/fa";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { FaCode, FaDatabase, FaTools, FaPalette } from "react-icons/fa";
 
 gsap.registerPlugin(ScrollTrigger);
 
 function Skills({ darkMode }) {
-  const skillCategoryRef = useRef([]);
-  const containerRef = useRef(null);
+  const sectionRef = useRef(null);
+  const headingRef = useRef(null);
+  const categoryRefs = useRef([]);
 
   useEffect(() => {
-    gsap.killTweensOf(skillCategoryRef.current);
+    // Heading animation
+    gsap.fromTo(headingRef.current,
+      { y: 50, opacity: 0 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top center+=100",
+          toggleActions: "play none none reverse"
+        }
+      }
+    );
 
-    gsap.set(skillCategoryRef.current, {
-      opacity: 0,
-      y: 50,
-    });
-
-    skillCategoryRef.current.forEach((card, index) => {
-      gsap.fromTo(
-        card,
-        { opacity: 0, y: 50 },
+    // Categories animation
+    categoryRefs.current.forEach((category, index) => {
+      gsap.fromTo(category,
+        { y: 50, opacity: 0 },
         {
           opacity: 1,
           y: 0,
-          duration: 1,
+          duration: 0.8,
+          delay: index * 0.2,
           ease: "power3.out",
           scrollTrigger: {
-            trigger: card,
-            start: "top 80%",
-          },
+            trigger: category,
+            start: "top center+=150",
+            toggleActions: "play none none reverse"
+          }
         }
       );
     });
+
+    return () => {
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+    };
   }, []);
 
-  const skillsCategories = [
+  const skillCategories = [
     {
-      title: "Frontend Development",
+      title: "Front-End Development",
       icon: <FaCode className="skill-icon" />,
       skills: [
         "HTML5",
         "CSS3",
         "JavaScript",
-        "React",
-        "Responsive Design",
-        "React Router DOM",
-      ],
+        "React.js",
+        "TypeScript",
+      ]
     },
     {
-      title: "Backend & Databases",
-      icon: <FaServer className="skill-icon" />,
-      skills: ["Firebase Authentication", "Firebase Database"],
+      title: "Back-End Development",
+      icon: <FaDatabase className="skill-icon" />,
+      skills: [
+        "Firebase Authentication",
+        "Firebase Database",
+      ]
     },
     {
-      title: "Tools & Version Control",
+      title: "Development Tools",
       icon: <FaTools className="skill-icon" />,
-      skills: ["Git", "GitHub", "VS Code", "Netlify"],
+      skills: [
+        "VS Code",
+        "Git",
+        "GitHub",
+        "Netlify",
+      ]
     },
     {
-      title: "UI/UX Design",
+      title: "UI/UX & Design",
       icon: <FaPalette className="skill-icon" />,
-      skills: ["CSS Animations", "Animate.style (Library)", "GSAP"],
-    },
+      skills: [
+        "CSS Flexbox",
+        "CSS Grid Layout",
+        "Responsive Design",
+        "Mobile-First Approach",
+        "CSS Animations",
+        "Bootstrap",
+        "Animate.style (library)",
+        "GSAP",
+      ]
+    }
   ];
 
   return (
-    <div
-      ref={containerRef}
-      className={`skills-container ${darkMode ? "dark-mode" : "light-mode"}`}
+    <section
+      ref={sectionRef}
+      className={`skills-section ${darkMode ? "dark-mode" : "light-mode"}`}
     >
-      <div className="skills-content">
-        <h2
-          className={`skills-heading ${darkMode ? "dark-mode" : "light-mode"}`}
-        >
-          My Skills & Expertise
+      <div className="skills-container">
+        <h2 ref={headingRef} className="skills-heading">
+          My Skills
         </h2>
 
         <div className="skills-grid">
-          {skillsCategories.map((category, index) => (
+          {skillCategories.map((category, categoryIndex) => (
             <div
-              ref={(el) => (skillCategoryRef.current[index] = el)}
-              key={index}
-              className={`skill-category ${
-                darkMode ? "dark-mode" : "light-mode"
-              }`}
+              key={category.title}
+              ref={el => (categoryRefs.current[categoryIndex] = el)}
+              className="skill-category"
             >
               <div className="category-header">
                 {category.icon}
                 <h3 className="category-title">{category.title}</h3>
               </div>
+
               <ul className="skills-list">
                 {category.skills.map((skill, skillIndex) => (
                   <li
-                    key={skillIndex}
-                    className={`skill-item ${
-                      darkMode ? "dark-mode" : "light-mode"
-                    }`}
+                    key={skill}
+                    className="skill-item"
                   >
                     {skill}
                   </li>
@@ -106,7 +133,7 @@ function Skills({ darkMode }) {
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

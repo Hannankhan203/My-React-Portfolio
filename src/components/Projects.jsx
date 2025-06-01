@@ -14,33 +14,93 @@ import ScrollMagic from "../assets/Scroll Magic.png";
 gsap.registerPlugin(ScrollTrigger);
 
 function Projects({ darkMode }) {
-  const projectCardRef = useRef([]);
-  const containerRef = useRef(null);
+  const sectionRef = useRef(null);
+  const headingRef = useRef(null);
+  const projectRefs = useRef([]);
+  const projectImagesRef = useRef([]);
+  const projectContentRef = useRef([]);
 
   useEffect(() => {
-    gsap.killTweensOf(projectCardRef.current);
-
-    gsap.set(projectCardRef.current, {
+    // Initial states
+    gsap.set(headingRef.current, {
       opacity: 0,
-      y: 50,
+      y: 50
     });
 
-    projectCardRef.current.forEach((card, index) => {
-      gsap.fromTo(
-        card,
-        { opacity: 0, y: 50 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 1,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: card,
-            start: "top 80%",
-          },
-        }
-      );
+    gsap.set(projectRefs.current, {
+      opacity: 0,
+      y: 100
     });
+
+    // Heading animation
+    gsap.to(headingRef.current, {
+      opacity: 1,
+      y: 0,
+      duration: 1,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: sectionRef.current,
+        start: "top center+=100",
+        toggleActions: "play none none reverse"
+      }
+    });
+
+    // Project cards animation
+    projectRefs.current.forEach((project, index) => {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: project,
+          start: "top center+=100",
+          toggleActions: "play none none reverse"
+        }
+      });
+
+      // Image reveal animation
+      tl.to(projectImagesRef.current[index], {
+        clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
+        duration: 1.2,
+        ease: "power4.out"
+      })
+      .to(project, {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: "power3.out"
+      }, "-=0.8")
+      .to(projectContentRef.current[index], {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: "power3.out"
+      }, "-=0.6");
+
+      // Hover animations
+      const hoverTl = gsap.timeline({ paused: true });
+      
+      hoverTl
+        .to(project, {
+          y: -10,
+          duration: 0.3,
+          ease: "power2.out"
+        })
+        .to(projectImagesRef.current[index], {
+          scale: 1.05,
+          duration: 0.3,
+          ease: "power2.out"
+        }, 0);
+
+      // Add hover event listeners
+      project.addEventListener("mouseenter", () => hoverTl.play());
+      project.addEventListener("mouseleave", () => hoverTl.reverse());
+    });
+
+    return () => {
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+      projectRefs.current.forEach(project => {
+        project?.removeEventListener("mouseenter", () => {});
+        project?.removeEventListener("mouseleave", () => {});
+      });
+    };
   }, []);
 
   const projectsArray = [
@@ -111,49 +171,46 @@ function Projects({ darkMode }) {
   ];
 
   return (
-    <div
-      ref={containerRef}
-      className={`projects-container ${darkMode ? "dark-mode" : "light-mode"}`}
+    <section
+      ref={sectionRef}
+      className={`projects-section ${darkMode ? "dark-mode" : "light-mode"}`}
     >
-      <div className="projects-content">
-        <h2
-          className={`projects-heading ${
-            darkMode ? "dark-mode" : "light-mode"
-          }`}
-        >
-          My Projects
+      <div className="projects-container">
+        <h2 ref={headingRef} className="projects-heading">
+          Featured Projects
         </h2>
 
         <div className="projects-grid">
           {projectsArray.map((project, index) => (
             <div
-              ref={(el) => (projectCardRef.current[index] = el)}
               key={project.id}
-              className={`project-card ${
-                darkMode ? "dark-mode" : "light-mode"
-              }`}
+              ref={el => (projectRefs.current[index] = el)}
+              className="project-card"
             >
-              <h3 className="project-title">{project.title}</h3>
-              <img
-                className="project-image"
-                src={project.src}
-                alt={project.alt}
-                loading="lazy"
-              />
-              <p className="project-tech">
-                <strong>Technologies:</strong> {project.tech}
-              </p>
-              <a
-                href={project.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`project-link ${
-                  darkMode ? "dark-mode" : "light-mode"
-                }`}
-                aria-label={`View ${project.title} project`}
+              <div className="project-image-container">
+                <img
+                  ref={el => (projectImagesRef.current[index] = el)}
+                  src={project.src}
+                  alt={project.alt}
+                  className="project-image"
+                />
+                <div className="project-overlay">
+                  <Link to={project.href} className="view-project">
+                    View Project
+                  </Link>
+                </div>
+              </div>
+
+              <div
+                ref={el => (projectContentRef.current[index] = el)}
+                className="project-content"
               >
-                View Project
-              </a>
+                <h3 className="project-title">{project.title}</h3>
+                <p className="project-tech">{project.tech}</p>
+                <Link to={project.href} className="project-link">
+                  Learn More
+                </Link>
+              </div>
             </div>
           ))}
         </div>
@@ -163,11 +220,11 @@ function Projects({ darkMode }) {
             to="/contact"
             className={`contact-link ${darkMode ? "dark-mode" : "light-mode"}`}
           >
-            Interested in my work? Let's talk!
+            Let's work together! Contact me →
           </Link>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 
