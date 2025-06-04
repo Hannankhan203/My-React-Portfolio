@@ -11,6 +11,7 @@ import AuthenticationForm from "../assets/Authentication Form.PNG";
 import TypingSpeedTest from "../assets/Typing Speed Test.png";
 import ScrollMagic from "../assets/Scroll Magic.png";
 import AttendanceManagementSystem from '../assets/Attendance Management System.png';
+import PersonalFinanceTracker from '../assets/Personal Finance Tracker.png';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -202,6 +203,15 @@ function Projects({ darkMode }) {
       href: "https://hannankhan203.github.io/Attendance-Management-System/",
       github: "https://github.com/Hannankhan203/Attendance-Management-System",
     },
+    {
+      id: 10,
+      title: "Personal Finance Tracker",
+      src: PersonalFinanceTracker,
+      alt: "Personal Finance Tracker",
+      tech: "HTML, CSS, JavaScript, Local Storage",
+      href: "https://hannankhan203.github.io/Personal-Expense-Tracker/",
+      github: "https://github.com/Hannankhan203/Personal-Expense-Tracker",
+    }
   ];
 
   return (
