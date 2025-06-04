@@ -4,12 +4,13 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Link } from "react-router-dom";
 import WeatherAppImg from "../assets/Weather app.PNG";
 import ScientificCalculator from "../assets/Scientific Calculator.PNG";
-import Notes from "../assets/Notes.PNG";
+import Notes from "../assets/Notes.png";
 import CurrencyConverter from "../assets/Currency Converter.PNG";
 import CoursingSite from "../assets/Coursing Site.PNG";
-import AuthenticationForm from "../assets/Authentication Form.PNG";
+import AuthenticationForm from "../assets/Authentication Form.png";
 import TypingSpeedTest from "../assets/Typing Speed Test.png";
 import ScrollMagic from "../assets/Scroll Magic.png";
+import AttendanceManagementSystem from '../assets/Attendance Management System.png';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -127,6 +128,7 @@ function Projects({ darkMode }) {
       alt: "Weather App",
       tech: "HTML, CSS, JavaScript, OpenWeather API",
       href: "https://hannankhan203.github.io/Weather-App/",
+      github: "https://github.com/Hannankhan203/Weather-App",
     },
     {
       id: 2,
@@ -135,14 +137,16 @@ function Projects({ darkMode }) {
       alt: "Scientific Calculator",
       tech: "HTML, CSS, JavaScript",
       href: "https://hannankhan203.github.io/Scientific-Calculator/",
+      github: "https://github.com/Hannankhan203/Scientific-Calculator",
     },
     {
       id: 3,
       title: "Notes App",
       src: Notes,
       alt: "Notes App",
-      tech: "HTML, CSS, JavaScript",
-      href: "https://hannankhan203.github.io/Notes/",
+      tech: "HTML, CSS, JavaScript, Local Storage, TypeScript",
+      href: "https://hannankhan203.github.io/Notes-App-TypeScript/",
+      github: "https://github.com/Hannankhan203/Notes-App-TypeScript",
     },
     {
       id: 4,
@@ -151,6 +155,7 @@ function Projects({ darkMode }) {
       alt: "Currency Converter",
       tech: "HTML, CSS, JavaScript, Open Exchange API",
       href: "https://hannankhan203.github.io/Currency-Converter/",
+      github: "https://github.com/Hannankhan203/Currency-Converter",
     },
     {
       id: 5,
@@ -159,14 +164,16 @@ function Projects({ darkMode }) {
       alt: "Coursing Site",
       tech: "HTML, CSS, JavaScript",
       href: "https://hannankhan203.github.io/Coursing-Site/",
+      github: "https://github.com/Hannankhan203/Coursing-Site",
     },
     {
       id: 6,
       title: "Authentication Form",
       src: AuthenticationForm,
       alt: "Authentication Form",
-      tech: "HTML, CSS, JavaScript, Firebase",
+      tech: "HTML, CSS, JavaScript, Firebase Authentication, Firebase Database",
       href: "https://authentication-form-203.netlify.app/",
+      github: "https://github.com/Hannankhan203/Authentication-Form",
     },
     {
       id: 7,
@@ -175,6 +182,7 @@ function Projects({ darkMode }) {
       alt: "Typing Speed Test",
       tech: "HTML, CSS, JavaScript, TypeScript",
       href: "https://hannankhan203.github.io/Typing-Speed-Test/",
+      github: "https://github.com/Hannankhan203/Typing-Speed-Test",
     },
     {
       id: 8,
@@ -183,6 +191,16 @@ function Projects({ darkMode }) {
       alt: "Scroll Magic (GSAP Integration)",
       tech: "HTML, CSS, JavaScript, GSAP",
       href: "https://scroll-magic-gsap.netlify.app/",
+      github: "https://github.com/Hannankhan203/Scroll-Magic",
+    },
+    {
+      id: 9,
+      title: "Attendance Management System",
+      src: AttendanceManagementSystem,
+      alt: "Attendance Management System",
+      tech: "HTML, CSS, JavaScript, Local Storage",
+      href: "https://hannankhan203.github.io/Attendance-Management-System/",
+      github: "https://github.com/Hannankhan203/Attendance-Management-System",
     },
   ];
 
@@ -211,7 +229,7 @@ function Projects({ darkMode }) {
                   className="project-image"
                 />
                 <div className="project-overlay">
-                  <Link to={project.href} className="view-project">
+                  <Link to={project.href} className="view-project" target="_blank">
                     View Project
                   </Link>
                 </div>
@@ -223,7 +241,7 @@ function Projects({ darkMode }) {
               >
                 <h3 className="project-title">{project.title}</h3>
                 <p className="project-tech">{project.tech}</p>
-                <Link to={project.href} className="project-link">
+                <Link to={project.github} className="project-link" target="_blank">
                   Learn More
                 </Link>
               </div>
