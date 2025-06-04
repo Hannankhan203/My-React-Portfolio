@@ -241,7 +241,7 @@ function Projects({ darkMode }) {
               >
                 <h3 className="project-title">{project.title}</h3>
                 <p className="project-tech">{project.tech}</p>
-                <Link to={project.href} className="project-link" target="_blank">
+                <Link to={project.github} className="project-link" target="_blank">
                   Learn More
                 </Link>
               </div>
