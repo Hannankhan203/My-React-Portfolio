@@ -61,7 +61,7 @@ function Projects({ darkMode }) {
 
       tl.to(projectImagesRef.current[index], {
         clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
-        duration: 1.2,
+        duration: 0.8,
         ease: "power4.out",
       })
         .to(
@@ -126,7 +126,7 @@ function Projects({ darkMode }) {
       id: 1,
       title: "Weather App",
       src: WeatherAppImg,
-      alt: "Weather App",
+      desc: "Responsive web app showing real-time forecasts with dark/light mode, built using WeatherAPI.",
       tech: "HTML, CSS, JavaScript, OpenWeather API",
       href: "https://hannankhan203.github.io/Weather-App/",
       github: "https://github.com/Hannankhan203/Weather-App",
@@ -135,6 +135,7 @@ function Projects({ darkMode }) {
       id: 2,
       title: "Scientific Calculator",
       src: ScientificCalculator,
+      desc: "Responsive web app with basic & advanced functions, featuring dark/light mode toggle.",
       alt: "Scientific Calculator",
       tech: "HTML, CSS, JavaScript",
       href: "https://hannankhan203.github.io/Scientific-Calculator/",
@@ -144,6 +145,7 @@ function Projects({ darkMode }) {
       id: 3,
       title: "Notes App",
       src: Notes,
+      desc: "TypeScript-powered task manager with CRUD operations, animations, and localStorage persistence.",
       alt: "Notes App",
       tech: "HTML, CSS, JavaScript, Local Storage, TypeScript",
       href: "https://hannankhan203.github.io/Notes-App-TypeScript/",
@@ -153,6 +155,7 @@ function Projects({ darkMode }) {
       id: 4,
       title: "Currency Converter",
       src: CurrencyConverter,
+      desc: "Real-time exchange tool with 160+ currencies, flags, and dark/light mode.",
       alt: "Currency Converter",
       tech: "HTML, CSS, JavaScript, Open Exchange API",
       href: "https://hannankhan203.github.io/Currency-Converter/",
@@ -162,6 +165,7 @@ function Projects({ darkMode }) {
       id: 5,
       title: "Coursing Site",
       src: CoursingSite,
+      desc: "Responsive e-learning platform for full-stack development with dark/light mode toggle.",
       alt: "Coursing Site",
       tech: "HTML, CSS, JavaScript",
       href: "https://hannankhan203.github.io/Coursing-Site/",
@@ -171,6 +175,7 @@ function Projects({ darkMode }) {
       id: 6,
       title: "Authentication Form",
       src: AuthenticationForm,
+      desc: "Firebase-powered application with authentication, CRUD operations, and password recovery.",
       alt: "Authentication Form",
       tech: "HTML, CSS, JavaScript, Firebase Authentication, Firebase Database",
       href: "https://authentication-form-203.netlify.app/",
@@ -180,6 +185,7 @@ function Projects({ darkMode }) {
       id: 7,
       title: "Typing Speed Test",
       src: TypingSpeedTest,
+      desc: "Interactive app measuring WPM and accuracy with real-time feedback",
       alt: "Typing Speed Test",
       tech: "HTML, CSS, JavaScript, TypeScript",
       href: "https://hannankhan203.github.io/Typing-Speed-Test/",
@@ -189,6 +195,7 @@ function Projects({ darkMode }) {
       id: 8,
       title: "Scroll Magic (GSAP Integration)",
       src: ScrollMagic,
+      desc: "Interactive landing page with GSAP animations, parallax effects, and cursor tracking.",
       alt: "Scroll Magic (GSAP Integration)",
       tech: "HTML, CSS, JavaScript, GSAP",
       href: "https://scroll-magic-gsap.netlify.app/",
@@ -198,6 +205,7 @@ function Projects({ darkMode }) {
       id: 9,
       title: "Attendance Management System",
       src: AttendanceManagementSystem,
+      desc: "Feature-rich web app with dark mode, PDF export, and responsive design.",
       alt: "Attendance Management System",
       tech: "HTML, CSS, JavaScript, Local Storage",
       href: "https://hannankhan203.github.io/Attendance-Management-System/",
@@ -207,6 +215,7 @@ function Projects({ darkMode }) {
       id: 10,
       title: "Personal Finance Tracker",
       src: PersonalFinanceTracker,
+      desc: "A responsive web app for managing income, expenses, and visualizing spending with interactive charts.",
       alt: "Personal Finance Tracker",
       tech: "HTML, CSS, JavaScript, Local Storage",
       href: "https://hannankhan203.github.io/Personal-Expense-Tracker/",
@@ -251,8 +260,9 @@ function Projects({ darkMode }) {
               >
                 <h3 className="project-title">{project.title}</h3>
                 <p className="project-tech">{project.tech}</p>
+                <p className="project-desc">{project.desc}</p>
                 <Link to={project.github} className="project-link" target="_blank">
-                  Learn More
+                  View Code
                 </Link>
               </div>
             </div>
@@ -264,7 +274,7 @@ function Projects({ darkMode }) {
             to="/contact"
             className={`contact-link ${darkMode ? "dark-mode" : "light-mode"}`}
           >
-            Let's work together! Contact me →
+            Contact me →
           </Link>
         </div>
       </div>
