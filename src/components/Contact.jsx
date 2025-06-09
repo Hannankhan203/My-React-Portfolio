@@ -20,6 +20,7 @@ function Contact({ darkMode }) {
   const socialIconsRef = useRef([]);
   const contactItemsRef = useRef([]);
   const formInputsRef = useRef([]);
+  const copyrightRef = useRef(null);
 
   // Helper functions to safely assign refs in array refs
   const setSocialIconRef = (index) => (el) => {
@@ -70,6 +71,11 @@ function Contact({ darkMode }) {
       opacity: 0,
       y: 30,
     });
+
+    gsap.set(copyrightRef.current, {
+      opacity: 0,
+      y: 30,
+    })
 
     // Main timeline
     const mainTl = gsap.timeline({
@@ -146,6 +152,15 @@ function Contact({ darkMode }) {
       },
       "-=0.5"
     );
+
+    mainTl.to(copyrightRef.current, {
+      opacity: 1,
+      y: 0,
+      duration: 0.8,
+      ease: "power2.out",
+    },
+    "-=0.3"
+  )
 
     ScrollTrigger.refresh();
 
@@ -224,6 +239,7 @@ function Contact({ darkMode }) {
           x: 0,
         });
         gsap.set(formInputsRef.current.filter(Boolean), { opacity: 1, y: 0 });
+        gsap.set(copyrightRef.current, { opacity: 1, y: 0, });
       }
     };
 
@@ -444,12 +460,11 @@ function Contact({ darkMode }) {
             </button>
           </form>
         </div>
-
-        <div className={`copyright ${darkMode ? "dark-mode" : "light-mode"}`}>
+      </div>
+      <div rel={copyrightRef} className={`copyright ${darkMode ? "dark-mode" : "light-mode"}`}>
           &copy; {new Date().getFullYear()} Abdul Hannan Khan. All rights
           reserved.
         </div>
-      </div>
     </div>
   );
 }

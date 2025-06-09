@@ -1137,7 +1137,6 @@
 
 /* Contact Section Enhanced Styles */
 .contact-container {
-  margin-top: 10vh;
   padding: 6rem 2rem;
   min-height: 100vh;
   transition: all 0.3s ease;
@@ -1170,6 +1169,7 @@
   margin: 0 auto;
   position: relative;
   z-index: 1;
+  margin-bottom: 4rem;
 }
 
 .contact-heading {
@@ -1181,18 +1181,6 @@
   -webkit-text-fill-color: transparent;
   background-clip: text;
   position: relative;
-}
-
-.contact-heading::after {
-  content: '';
-  position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100px;
-  height: 3px;
-  background: linear-gradient(90deg, #007bff, #00bcd4);
-  border-radius: 2px;
 }
 
 .dark-mode .contact-heading {
@@ -1286,8 +1274,11 @@
 .contact-link {
   text-decoration: none;
   color: #4a5568;
+  padding: 3px;
+  border-radius: 5px;
   font-size: 1.1rem;
   transition: all 0.3s ease;
+  width: 100%;
 }
 
 .dark-mode .contact-link {
@@ -1458,12 +1449,16 @@
 
 .copyright {
   text-align: center;
-  margin-top: 4rem;
-  padding-top: 2rem;
+  padding: 2rem;
   color: #4a5568;
   font-size: 1rem;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-top: 1px solid rgba(0, 0, 0, 0.5);
   transition: all 0.3s ease;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
 }
 
 .dark-mode .copyright {
