@@ -10,8 +10,8 @@ import CoursingSite from "../assets/Coursing Site.PNG";
 import AuthenticationForm from "../assets/Authentication Form.PNG";
 import TypingSpeedTest from "../assets/Typing Speed Test.png";
 import ScrollMagic from "../assets/Scroll Magic.png";
-import AttendanceManagementSystem from '../assets/Attendance Management System.png';
-import PersonalFinanceTracker from '../assets/Personal Finance Tracker.png';
+import AttendanceManagementSystem from "../assets/Attendance Management System.png";
+import PersonalFinanceTracker from "../assets/Personal Finance Tracker.png";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -220,7 +220,7 @@ function Projects({ darkMode }) {
       tech: "HTML, CSS, JavaScript, Local Storage",
       href: "https://hannankhan203.github.io/Personal-Expense-Tracker/",
       github: "https://github.com/Hannankhan203/Personal-Expense-Tracker",
-    }
+    },
   ];
 
   return (
@@ -248,7 +248,11 @@ function Projects({ darkMode }) {
                   className="project-image"
                 />
                 <div className="project-overlay">
-                  <Link to={project.href} className="view-project" target="_blank">
+                  <Link
+                    to={project.href}
+                    className="view-project"
+                    target="_blank"
+                  >
                     View Project
                   </Link>
                 </div>
@@ -261,9 +265,22 @@ function Projects({ darkMode }) {
                 <h3 className="project-title">{project.title}</h3>
                 <p className="project-tech">{project.tech}</p>
                 <p className="project-desc">{project.desc}</p>
-                <Link to={project.github} className="project-link" target="_blank">
+                <div className="btns">
+                  <Link
+                  to={project.github}
+                  className="project-link"
+                  target="_blank"
+                >
                   View Code
                 </Link>
+                <Link
+                  to={project.href}
+                  className="view-project-res hide"
+                  target="_blank"
+                >
+                  View Project
+                </Link>
+                </div>
               </div>
             </div>
           ))}
