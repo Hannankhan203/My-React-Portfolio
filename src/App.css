@@ -106,19 +106,19 @@
 
 /* Light/Dark Mode Link Colors */
 .light-mode .link {
-  color: #10b981;
-}
-
-.dark-mode .link {
-  color: #06b6d4;
-}
-
-.light-mode .link:hover {
   color: #007bff;
 }
 
+.dark-mode .link {
+  color: #64ffda;
+}
+
+.light-mode .link:hover {
+  color: #0056b3;
+}
+
 .dark-mode .link:hover {
-  color: #1e90ff;
+  color: #4fd1c5;
 }
 
 /* Mobile Styles */
@@ -279,31 +279,6 @@
 .download-resume-link {
   text-decoration: none;
   color: inherit;
-}
-
-.cta-button.download-resume {
-  background: transparent;
-  border: 2px solid #007bff;
-  color: #007bff;
-  transition: all 0.3s ease;
-}
-
-.dark-mode .cta-button.download-resume {
-  border-color: #64ffda;
-  color: #64ffda;
-}
-
-.cta-button.download-resume:hover {
-  background: #007bff;
-  color: white;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 123, 255, 0.3);
-}
-
-.dark-mode .cta-button.download-resume:hover {
-  background: #64ffda;
-  color: #1a202c;
-  box-shadow: 0 6px 20px rgba(100, 255, 218, 0.3);
 }
 
 .cta-button {
@@ -485,7 +460,6 @@
 
 .about-image {
   width: 100%;
-  max-width: 400px;
   height: auto;
   display: block;
   border-radius: 10px;
@@ -689,7 +663,7 @@
 .projects-heading {
   font-size: 2.8rem;
   font-weight: 800;
-  /* text-align: center; */
+  text-align: center;
   margin-bottom: 4rem;
   background: linear-gradient(45deg, #007bff, #00bcd4);
   -webkit-background-clip: text;
