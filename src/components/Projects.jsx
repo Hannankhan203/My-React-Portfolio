@@ -12,6 +12,7 @@ import TypingSpeedTest from "../assets/Typing Speed Test.png";
 import ScrollMagic from "../assets/Scroll Magic.png";
 import AttendanceManagementSystem from "../assets/Attendance Management System.png";
 import PersonalFinanceTracker from "../assets/Personal Finance Tracker.png";
+import SuperchatApp from '../assets/Superchat.PNG'
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -220,6 +221,16 @@ function Projects({ darkMode }) {
       tech: "HTML, CSS, JavaScript, Local Storage",
       href: "https://hannankhan203.github.io/Personal-Expense-Tracker/",
       github: "https://github.com/Hannankhan203/Personal-Expense-Tracker",
+    },
+    {
+      id: 11,
+      title: "Superchat - Realtime Chat App",
+      src: SuperchatApp,
+      desc: "A responsive chat application with real-time messaging, user authentication, and message history. Built with React and Firebase for instant updates across all connected clients.",
+      alt: "Superchat App",
+      tech: "React, Firebase Auth, Firestore, Context API, React Router, CSS Modules",
+      href: "https://super-chat-gamma.vercel.app/",
+      github: "https://github.com/Hannankhan203/SuperChat.git",
     },
   ];
 
