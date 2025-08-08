@@ -13,6 +13,7 @@ import ScrollMagic from "../assets/Scroll Magic.png";
 import AttendanceManagementSystem from "../assets/Attendance Management System.png";
 import PersonalFinanceTracker from "../assets/Personal Finance Tracker.png";
 import SuperchatApp from '../assets/Superchat.PNG'
+import StudentManagementSystem from '../assets/Student Management System.PNG';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -231,6 +232,16 @@ function Projects({ darkMode }) {
       tech: "React, Firebase Auth, Firestore, Context API, React Router, CSS Modules",
       href: "https://super-chat-gamma.vercel.app/",
       github: "https://github.com/Hannankhan203/SuperChat.git",
+    },
+    {
+      id: 12,
+      title: "Student Management System",
+      src: StudentManagementSystem,
+      desc: "A responsive admin dashboard for managing student records with secure authentication and real-time data updates. Built with React and Firebase for seamless CRUD operations and user management across devices.",
+      alt: "Student Management System",
+      tech: "React, Firebase Auth, Firestore, React Router, CSS Modules",
+      href: "https://student-management-system-lilac-zeta.vercel.app/",
+      github: "https://github.com/Hannankhan203/Student-Management-System.git",
     },
   ];
 
