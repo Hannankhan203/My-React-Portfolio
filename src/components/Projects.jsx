@@ -13,7 +13,7 @@ import ScrollMagic from "../assets/Scroll Magic.png";
 import AttendanceManagementSystem from "../assets/Attendance Management System.png";
 import PersonalFinanceTracker from "../assets/Personal Finance Tracker.png";
 import SuperchatApp from '../assets/Superchat.PNG'
-import StudentManagementSystem from '../assets/Student Management System.PNG';
+import StudentManagementSystem from '../assets/Student Management System.PNG'
 
 gsap.registerPlugin(ScrollTrigger);
 
