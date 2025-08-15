@@ -62,12 +62,12 @@ function Skills({ darkMode }) {
     {
       title: "Back-End Development",
       icon: <FaDatabase className="skill-icon" />,
-      skills: ["Firebase Authentication", "Firebase Database"],
+      skills: ["Firebase Authentication", "Firebase Database", "Firebase Hosting"],
     },
     {
       title: "Development Tools",
       icon: <FaTools className="skill-icon" />,
-      skills: ["VS Code", "Git", "GitHub", "Netlify"],
+      skills: ["VS Code", "Git", "GitHub", "Netlify", "Vercel"],
     },
     {
       title: "UI/UX & Design",
