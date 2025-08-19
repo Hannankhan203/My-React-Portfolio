@@ -57,7 +57,7 @@ function Skills({ darkMode }) {
     {
       title: "Front-End Development",
       icon: <FaCode className="skill-icon" />,
-      skills: ["HTML5", "CSS3", "JavaScript", "React.js", "TypeScript"],
+      skills: ["HTML5", "CSS3", "JavaScript", "TypeScript", "React.js", "CSS Flexbox", "CSS Grid Layout", "Responsive Design", "Mobile-First Approach", "CSS Animations", "Bootstrap (Library)", "Animate.css (Library)", "GSAP (Library)", "Shadcn (Library)", "Zustand (Library)", "Formik (Library)", "Yup (Library)"],
     },
     {
       title: "Back-End Development",
@@ -73,14 +73,7 @@ function Skills({ darkMode }) {
       title: "UI/UX & Design",
       icon: <FaPalette className="skill-icon" />,
       skills: [
-        "CSS Flexbox",
-        "CSS Grid Layout",
-        "Responsive Design",
-        "Mobile-First Approach",
-        "CSS Animations",
-        "Bootstrap",
-        "Animate.style (library)",
-        "GSAP",
+        "Responsive Design", "Mobile-First Approach", "CSS Animations"
       ],
     },
   ];
