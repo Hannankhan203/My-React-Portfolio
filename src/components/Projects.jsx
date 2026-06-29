@@ -150,8 +150,8 @@ function Projects({ darkMode }) {
       desc: "TypeScript-powered task manager with CRUD operations, animations, and localStorage persistence.",
       alt: "Notes App",
       tech: "HTML, CSS, JavaScript, Local Storage, TypeScript",
-      href: "https://hannankhan203.github.io/Notes-App-TypeScript/",
-      github: "https://github.com/Hannankhan203/Notes-App-TypeScript",
+      href: "https://github.com/Hannankhan203/Notes-App",
+      github: "https://hannankhan203.github.io/Notes-App/",
     },
     {
       id: 4,
