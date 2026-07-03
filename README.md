@@ -6,7 +6,7 @@ This is my **personal portfolio website** built using **React.js**, designed to 
 
 ## 📌 Live Demo
 
-🌐 **Hosted on:** [Netlify](https://my-react-portfolio-203.netlify.app/)
+🌐 **Hosted on:** [Vercel](https://hannannkhann-git-main-hannankhan203s-projects.vercel.app/)
 
 ---
 
@@ -29,7 +29,7 @@ This is my **personal portfolio website** built using **React.js**, designed to 
   - `Contact.js` – Contact form or email/social options
 - 🎨 **Custom CSS styling** for layout, colors, and transitions.
 - 📂 **Version control** with Git and hosted on **GitHub**.
-- 🌐 **Automatically deployed** to Netlify from GitHub with CI/CD.
+- 🌐 **Automatically deployed** to Vercel from GitHub with CI/CD.
 
 ---
 
@@ -43,7 +43,7 @@ This is my **personal portfolio website** built using **React.js**, designed to 
 | CSS            | Styling and layout                 |
 | HTML5          | Markup structure (via JSX)         |
 | JavaScript     | Logic and interactivity            |
-| Netlify        | Continuous deployment & hosting    |
+| Vercel         | Continuous deployment & hosting    |
 | Git & GitHub   | Version control and code hosting   |
 
 ---
@@ -73,4 +73,4 @@ Here are some demo GIFs showcasing my React Portfolio:
 
 ## 📌 Version
 
-**Current Version:** `v2.0.0` – Shifted from basic React to **React Router DOM** for improved routing and navigation, with all planned features completed.
+**Current Version:** `v2.1.0` – Added **GSAP Animations** for smooth transitions.
