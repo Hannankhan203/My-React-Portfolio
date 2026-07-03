@@ -7,14 +7,6 @@ import ScientificCalculator from "../assets/Scientific Calculator.PNG";
 import Notes from "../assets/Notes.PNG";
 import CurrencyConverter from "../assets/Currency Converter.PNG";
 import CoursingSite from "../assets/Coursing Site.PNG";
-import AuthenticationForm from "../assets/Authentication Form.PNG";
-import TypingSpeedTest from "../assets/Typing Speed Test.png";
-import ScrollMagic from "../assets/Scroll Magic.png";
-import AttendanceManagementSystem from "../assets/Attendance Management System.png";
-import PersonalFinanceTracker from "../assets/Personal Finance Tracker.png";
-import SuperchatApp from '../assets/Superchat.PNG'
-import StudentManagementSystem from '../assets/Student Management System.PNG'
-
 gsap.registerPlugin(ScrollTrigger);
 
 function Projects({ darkMode }) {
